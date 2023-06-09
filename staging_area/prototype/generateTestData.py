@@ -1,4 +1,3 @@
-import json
 import pyodbc
 from faker import Faker
 import time
@@ -6,7 +5,7 @@ import time
 driver = '{ODBC Driver 18 for SQL Server}'
 server = '127.0.0.1'
 database = 'ise_project_prototype'
-username = 'SA'
+username = 'sa'
 password = 'ISE_project'
 connection_string = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password};TrustServerCertificate=yes'
 conn = pyodbc.connect(connection_string)
@@ -47,8 +46,6 @@ def generate_fake_data():
             generate_fake_data()
     except pyodbc.Error as e:
         print("Error connecting to database:", e)
-    except pd.errors.DatabaseError as e:
-        print("Error executing SQL query:", e)
 
 generate_fake_data()
 

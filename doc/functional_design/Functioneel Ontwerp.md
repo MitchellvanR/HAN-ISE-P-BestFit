@@ -19,6 +19,12 @@
 - [5.1 Business Rules](#51-business-rules)
 - [6 Interactie Model (CRUD-matrix)](#6-interactiemodel-crud-matrix)
 - [7 Gebruikers](#7-gebruikers)
+- [8 Designkeuzes](#8-designkeuzes)
+  - [8.1 Lid en medewerker identity](#81-lid-en-medewerker-identity)
+  - [8.2 Paid_until en subscription_status](#82-paiduntil-en-subscriptionstatus)
+  - [8.3 Member en Minor](#83-member-en-minor)
+  - [8.4 Discount](#84-discount)
+  - [8.5 RoomReservation en Room](#85-roomreservation-en-room)
     
 ## 1. Inleiding
 
@@ -128,7 +134,7 @@ categorieën zijn abonnementen, groepslessen, medewerkers, ruimtes, machines en 
 #### 3.1.3 Medewerkers
 | **Code** | **Beschrijving**                                                                       | **Gerelateerde user story** |
 |----------|----------------------------------------------------------------------------------------|-----------------------------|
-| FR-13    | Per begeleider moet vastgelegd worden welke lessen hij of zij mag geven.               | US-17                       |
+| FR-13    | Per medewerker moet vastgelegd worden welke lessen hij of zij mag geven.               | US-17                       |
 | FR-14    | Medewerkers mogen alleen groepslessen geven in onderwerpen waar ze les in mogen geven. | US-17                       |
 | FR-15    | Medewerkers kunnen niet meerdere groepslessen en/of toewijzingen tegelijk hebben.      | US-17, US-21                |
 
@@ -155,290 +161,336 @@ categorieën zijn abonnementen, groepslessen, medewerkers, ruimtes, machines en 
 #### 1 Voornaam van lid
 Het lid met lidnummer <u>123</u> heeft als voornaam <u>Tom</u>.
 
+
 | <u>456</u>        | <u>Anna</u>     |
 |-------------------|-----------------|
 | ET: Member        | Att: first_name |
 | ID: att member_id |                 |
 
+
 Lid met lidnummer < member_id > heeft als voornaam < first_name >.
 
----------------------------------------------------------------------
+
 #### 2 Achternaam van lid
 Het lid met lidnummer <u>123</u> heeft als achternaam <u>Blauw</u>.
+
 
 | <u>456</u> | <u>Smit</u>    |
 |------------|----------------|
 | ET: Member | Att: last_name |
 | MATCH      |                |
 
+
 Lid met lidnummer < member_id > heeft als achternaam < last_name >.
 
---------------------------------------------------------------------------
+
 #### 3 Email van lid
 Het lid met lidnummer <u>123</u> heeft als email <u>TomBlauw@gmail.com</u>.
+
 
 | <u>456</u> | <u>AJ.Smit@icloud.com</u> |
 |------------|---------------------------|
 | ET: Member | Att: email                |
 | MATCH      |                           |
 
+
 Lid met lidnummer < member_id > heeft als email < email >.
 
-------------------------------------------------------------------------
+
 #### 4 Telefoonnummer van lid
 Lid met lidnummer <u>123</u> heeft het telefoonnummer <u>0612767683</u>.
+
 
 | <u>456</u> | <u>0682937456</u> |
 |------------|-------------------|
 | ET: Member | Att: phone_number |
 | MATCH      |                   |
 
+
 Lid met lidnummer < member_id > heeft het telefoonnummer < phone_number >.
 
--------------------------------------------------------------------------
+
 #### 5 Geboortedatum van lid
 Lid met lidnummer <u>123</u> is geboren op <u>20/08/1993</u>.
+
 
 | <u>456</u> | <u>01/04/2006</u> |
 |------------|-------------------|
 | ET: Member | Att: birthdate    |
 | MATCH      |                   |
 
+
 Lid met lidnummer < member_id > is geboren op < birthdate >.
 
---------------------------------------------------------------------------
+
 #### 6 Voornaam van voogd van lid
 Lid met lidnummer <u>465</u> heeft de voogd met de voornaam <u>Daan</u>.
+
 
 | <u>789</u> | <u>Harry</u>            |
 |------------|-------------------------|
 | ET: Member | Att guardian_first_name |
 | MATCH      |                         |
 
+
 Lid met lidnummer < member_id > heeft de voogd met de voornaam < guardian_first_name >.
 
---------------------------------------------------------------------------
+
 #### 7 Achternaam van voogd van lid
 Lid met lidnummer <u>123</u> heeft de voogd met de achternaam <u>Smit</u>.
+
 
 | <u>839</u> | <u>Burgt</u>           |
 |------------|------------------------|
 | ET: Member | Att guardian_last_name |
 | MATCH      |                        |
 
+
 Lid met lidnummer < member_id > heeft de voogd met de achternaam < guardian_last_name >.
 
---------------------------------------------------------------------------
-#### 8 Email van voogd van lid
 
+#### 8 Email van voogd van lid
 Lid met lidnummer <u>456</u> heeft de voogd met de email <u>D.Smit@gmail.com</u>.
+
 
 | <u>789</u> | <u>ReneeBurgt@gmail.nl</u> |
 |------------|----------------------------|
 | ET: Member | Att guardian_email         |
 | MATCH      |                            |
 
+
 Lid met lidnummer < member_id > heeft de voogd met de email < guardian_email >.
 
---------------------------------------------------------------------------
-#### 9 Telefoonnummer van voogd van lid
 
+#### 9 Telefoonnummer van voogd van lid
 Lid met lidnummer <u>456</u> heeft de voogd met het telefoonnummer <u>0633204836</u>.
+
 
 | <u>789</u> | <u>0623894567</u>         |
 |------------|---------------------------|
 | ET: Member | Att guardian_phone_number |
 | MATCH      |                           |
 
+
 Lid met lidnummer < member_id > heeft de voogd met het telefoonnummer < guardian_phone_number >.
 
-----------------------------------------------------------------------------
+
 #### 10 Geboortedatum van voogd van lid
 Lid met lidnummer <u>456</u> heeft de voogd met de geboortedatum <u>20/02/1982</u>.
+
 
 | <u>789</u> | <u>30/03/1973</u>     |
 |------------|-----------------------|
 | ET: Member | Att guardian_birthday |
 | MATCH      |                       |
 
+
 Lid met lidnummer < member_id > heeft de voogd met de geboortedatum < guardian_birthday >.
 
---------------------------------------------------------------------------
+
 #### 11 Opzegtermijn van abonnement
 Abonnementen van het type <u>ALLES</u> hebben een opzegtermijn van <u>4</u> weken.
+
 
 | <u>SQUASH</u>        | <u>2</u>           |
 |----------------------|--------------------|
 | ET: SubscriptionType | Att: notice_period |
 | ID: att type         |                    |
 
+
 Abonnementen van het type < type > hebben een opzegtermijn van < notice_period > weken.
 
-------------------------------------------------------------------------------------
+
 #### 12 Minimumlengte van abonnement
 Abonnementen van het type <u>ALLES</u> hebben een minimumlengte van <u>3</u> maanden.
+
 
 | <u>SQUASH</u>        | <u>12</u>       |
 |----------------------|-----------------|
 | ET: SubscriptionType | Att: min_length |
 | MATCH                |                 |
 
+
 Abonnementen van het type < type > hebben een opzegtermijn van < min_length > maanden.
 
-------------------------------------------------------------------------------------
+
 #### 13 Minimumleeftijd van abonnement
 Abonnementen van het type <u>ALLES</u> hebben een minimumleeftijd van <u>18</u> jaar.
+
 
 | <u>SQUASH</u>        | <u>21</u>    |
 |----------------------|--------------|
 | ET: SubscriptionType | Att: min_age |
 | MATCH                |              |
 
+
 Abonnementen van het type < type > hebben een minimumleeftijd van < min_age > jaar.
 
-------------------------------------------------------------------------------------
+
 #### 14 Maximumleeftijd van abonnement
 Abonnementen van het type <u>ALLES</u> hebben een maximumleeftijd van <u>18</u> jaar.
+
 
 | <u>SQUASH</u>        | <u>21</u>    |
 |----------------------|--------------|
 | ET: SubscriptionType | Att: max_age |
 | MATCH                |              |
 
+
 Abonnementen van het type < type > hebben een maximumleeftijd van < max_age > jaar.
 
-------------------------------------------------------------------------------------
+
 #### 15 Type van machine
 De machine met het id <u>18</u> heeft het type <u>leg press</u>.
+
 
 | <u>23</u>           | <u>lat pull down</u> |
 |---------------------|----------------------|
 | ET: Machine         | ET MachineType       |
 | ID: att machine_id  | ID: att type_name    |
 
+
 De machine met het id < machine_id > heeft het type < type_name >.
 RT MACHINE_MACHINE_TYPE tussen MACHINE en MACHINE_TYPE.
 
-----------------------------------------------------------------------------------------------
+
 #### 16 Status van machine
 De machine met het id <u>18</u> heeft als status <u>werkend</u>.
+
 
 | <u>23</u>   |  <u>buiten gebruik</u> |
 |-------------|------------------------|
 | ET: Machine | Att machine_status     |
 | MATCH       |                        |
 
+
 De machine met het id < machine_id > heeft als status < status >.
 
------------------------------------------------------------------------------
 
 #### 17 Ruimte van machine
 De machine met het id <u>18</u> staat in ruimte <u>XYZ</u>.
+
 
 | <u>23</u>   | <u>ABC</u>      |
 |-------------|-----------------|
 | ET: Machine | ET Room         |
 | MATCH       | ID: att room_id |
 
+
 De machine met het id < machine_id > staat in ruimte < room_id >.
 RT MACHINE_in_ROOM tussen MACHINE en ROOM.
 
----------------------------------------------------------------------------
 
 #### 18 Maximaal aantal mensen in ruimte
 In ruimte <u>XYZ</u> mogen maximaal <u>4</u> mensen zijn.
+
 
 | <u>ABC</u> | <u>30</u>      |
 |------------|----------------|
 | ET Room    | att max_people |
 | MATCH      |                |
 
+
 In ruimte < room_id > mogen maximaal < max_people > mensen zijn.
 
----------------------------------------------------------------------------
+
 #### 19 Functionaliteit van ruimte
 Ruimte <u>EFG</u> is geschikt voor <u>groepslessen</u>.
+
 
 | <u>ABC</u> | <u>fitness</u>    |
 |------------|-------------------|
 | ET: Room   | att functionality |
 | MATCH      |                   |
 
+
 Ruimte < room_id > is geschikt voor < functionality >.
 
-----------------------------------------------------------------------------
+
 #### 20 Abonnementen van groepsles
 De groepsles <u>DansA</u> is mogelijk voor leden met het abonnement <u>DANS</u>.
+
 
 | <u>YogaB</u>       | <u>ALLES</u>         |
 |--------------------|----------------------|
 | ET: GroupClassType | ET: SubscriptionType |
 | ID: att class_name | MATCH                |
 
+
 De groepsles < class_name > is mogelijk voor leden met het abonnement < type >.
 RT GROUP_CLASS_TYPE_SUBSCRIPTION_TYPE tussen GROUP_CLASS_TYPE en SUBSCRIPTION_TYPE.
 
----------------------------------------------------------------------------
+
 #### 21 Maximaal aantal deelnemers van groepsles
 De groepsles <u>DansA</u> kan een maximaal aantal van <u>10</u> deelnemers hebben.
+
 
 | <u>YogaB</u>       |  <u>15</u>            |
 |--------------------|-----------------------|
 | ET: GroupClassType | Att: max_participants |
 | MATCH              |                       |
 
+
 De groepsles < class_name > kan een maximaal aantal van < max_participants > deelnemers hebben.
 
------------------------------------------------------------------------------
+
 #### 22 Voornaam van medewerker
 De medewerker <u>876</u> heeft de voornaam <u>Julia</u>.
+
 
 | <u>902</u>          | <u>Juliët</u>   |
 |---------------------|-----------------|
 | ET: Employee        | Att: first_name |
 | ID: att employee_id |                 |
 
+
 De medewerker < employee_id > heeft de voornaam < first_name >.
 
------------------------------------------------------------------------------
+
 #### 23 Achternaam van medewerker
 De medewerker <u>876</u> heeft de achternaam <u>de Bos</u>.
+
 
 | <u>902</u>   | <u>van Huizen</u> |
 |--------------|-------------------|
 | ET: Employee | Att: last_name    |
 | MATCH        |                   |
 
+
 De medewerker < employee_id > heeft de voornaam < last_name >.
 
------------------------------------------------------------------------
 
 #### 24 Rol van medewerker
 De medewerker <u>876</u> is een <u>Manager</u>.
 
-| <u>902</u>   | <u>Instructeur</u> |
-|--------------|--------------------|
-| ET: Employee | ET: Role           |
-| MATCH        | ID: att role_name  |
+
+| <u>902</u>   | <u>Roster maker</u> |
+|--------------|---------------------|
+| ET: Employee | ET: Role            |
+| MATCH        | ID: att role_name   |
+
 
 De medewerker < employee_id > is een < role_name >
 RT EMPLOYEE_ROLE tussen EMPLOYEE en ROLE.
 
------------------------------------------------------------------------------------
+
 #### 25 Groepsles type van medewerker
 De medewerker <u>876</u> is in staat om groepsles <u>DansA</u> te geven.
+
 
 | <u>902</u>   | <u>YogaB</u>       |
 |--------------|--------------------|
 | ET: Employee | ET: GroupClassType |
 | MATCH        | Match              |
 
+
 De medewerker < employee_id > is in staat om groepsles < class_name > te geven.
 RT EMPLOYEE_GROUP_CLASS_TYPE tussen EMPLOYEE en GROUP_CLASS_TYPE.
 
------------------------------------------------------------------------------------
+
 #### 26 Medewerker van groepsles
 De groepsles van het type <u>DansA</u> om <u>9:00 17/05/2023</u> in ruimte <u>EFG</u> wordt gegeven door de medewerker <u>876</u>.
+
 
 | <u>YogaB</u> - <u>14:00 19/05/2023</u> - <u>EFG</u>   | <u>902</u>   |
 |-------------------------------------------------------|--------------|
@@ -446,35 +498,41 @@ De groepsles van het type <u>DansA</u> om <u>9:00 17/05/2023</u> in ruimte <u>EF
 | ID: ET GroupClassType + att class_timestamp + ET Room | MATCH        |
 | MATCH MATCH                                           |              |
 
+
 De groepsles van het type < class_name > om < start_timestamp > in ruimte < room_id > wordt gegeven door de medewerker < employee_id >.
 RT GROUP_CLASS_EMPLOYEE tussen GROUP_CLASS en EMPLOYEE.
 
------------------------------------------------------------------------------------------
+
 #### 27 Eindtijd van groepsles
 De groepsles van het type <u>DansA</u> om <u>9:00 17/05/2023</u> in ruimte <u>EFG</u> is afgelopen om <u>11:00 17/05/2023</u>.
+
 
 | <u>YogaB</u> - <u>14:00 19/05/2023</u> - <u>EFG</u> | <u>15:30 19/05/2023</u> |
 |-----------------------------------------------------|-------------------------|
 | ET: GroupClass                                      | att class_duration      |
 | MATCH                                               |                         |
 
+
 De groepsles van het type < type > om < start_timestamp > in ruimte < room_id > is afgelopen om < end_timestamp >.
 
-----------------------------------------------------------------------------------------
+
 #### 28 Groepsles van lid
 Voor lid <u>123</u> is er een inschrijving voor groepsles <u>DansA</u> op <u>17-04-2023 8:30:52</u> in ruimte <u>EFG</u>.
+
 
 | <u>456</u> | <u>YogaB</u> - <u>10-06-2023 8:30:52</u> - <u>EFG</u> |
 |------------|-------------------------------------------------------|
 | ET: Member | ET GroupClass                                         |
 | MATCH      | MATCH                                                 |
 
+
 Voor lid < member_id > is er een inschrijving voor groepsles < class_name > op < start_timestamp > in ruimte < room_id >.
 RT MEMBER_in_GROUP_CLASS tussen MEMBER en GROUP_CLASS.
 
-------------------------------------------------------------------------------------
+
 #### 29 Einddatum van abonnement
 Het abonnement voor lid <u>123</u> van het type <u>ALLES</u> vanaf <u>03/02/2023</u> eindigt op <u>03/02/2024</u>.
+
 
 | <u>456</u> - <u>SQUASH</u> - <u>12/12/2022</u>        |  <u>12/6/2023</u> |
 |-------------------------------------------------------|-------------------|
@@ -482,62 +540,43 @@ Het abonnement voor lid <u>123</u> van het type <u>ALLES</u> vanaf <u>03/02/2023
 | ID: ET Member + ET SubscriptionType + att start_date  |                   |
 | MATCH           MATCH                                 |                   |
 
+
 Het abonnement voor lid < member_id > van het type < type > vanaf < start_date > eindigt op < end_date >.
 RT MEMBER_of_SUBSCRIPTION tussen SUBSCRIPTION(dependent) en MEMBER.
 RT SUBSCRIPTION_TYPE_of_SUBSCRIPTION tussen SUBSCRIPTION(dependent) en SUBSCRIPTION_TYPE.
 
-
----------------------------------------------------------------------------
-#### 30 Status van abonnement
-Het abonnement voor lid <u>123</u> van het type <u>ALLES</u> vanaf <u>03/02/2023</u> heeft als status <u>actief</u>.
-
-| <u>456</u> - <u>SQUASH</u> - <u>12/12/2022</u> |  <u>inactief</u>        |
-|------------------------------------------------|-------------------------|
-| ET: Subscription                               | Att subscription_status |
-| MATCH                                          |                         |
-
-Het abonnement voor lid < member_id > van het type < type > vanaf < start_date > heeft als status < status >.
-
-----------------------------------------------------------------------------
-#### 31 Betaald tot van abonnement
-Het abonnement voor lid <u>123</u> van het type <u>ALLES</u> vanaf <u>03/02/2023</u> heeft betaald tot <u>20-08-2023</u>.
-
-| <u>456</u> - <u>SQUASH</u> - <u>12/12/2022</u> |  <u>10-12-2023</u> |
-|------------------------------------------------|--------------------|
-| ET: Subscription                               | Att paid_until     |
-| MATCH                                          |                    |
-
-Het abonnement voor lid < member_id > van het type < type > vanaf < start_date > heeft betaald tot < paid_until >.
-
-----------------------------------------------------------------------------------------
-#### 32 Aantal mensen van squashreservering
+#### 30 Aantal mensen van squashreservering
 De squash reservering van lid <u>123</u> voor ruimte <u>XYZ</u> om <u>14:00 25/04/2023</u> is een reservering voor <u>4</u> mensen.
+
 
 | <u>456</u> - <u>ABC</u> - <u>11:00 04/05/2023</u> | <u>1</u>      |
 |---------------------------------------------------|---------------|
 | ET: RoomReservation                               | att quantity  |
 | ID: ET Member + ET Room + Att start_timestamp     |               |
 | MATCH           MATCH                             |               |
-|                                                   |               |
+
 
 De reservering van lid < member_id > voor ruimte < room_id > om < start_timestamp > is een reservering voor < quantity > mensen.
 RT MEMBER_in_RESERVATION tussen ROOM_RESERVATION(dependent) en MEMBER.
 RT ROOM_ROOM_RESERVATION tussen ROOM_RESERVATION(dependent) en ROOM.
 
-----------------------------------------------------
-#### 33 eindtijd van squashreservering
+
+#### 31 eindtijd van squashreservering
 De squash reservering van lid <u>123</u> voor ruimte <u>HIJ</u> om <u>14:00 25/04/2023</u> is afgelopen om <u>15:00 25/04/2023</u>.
+
 
 | <u>456</u> - <u>HIJ</u> - <u>11:00 04/05/2023</u> | <u>11:30 04/05/2023</u> |
 |---------------------------------------------------|-------------------------|
 | ET: RoomReservation                               | att end_timestamp       |
 | MATCH                                             |                         |
 
+
 De reservering van lid < member_id > voor ruimte < room_id > om < start_timestamp > is afgelopen om < end_timestamp >.
 
-------------------------------------------------------------------------
-#### 34 Einddatum van machine reservatie
+
+#### 32 Einddatum van machine reservatie
 De reservering van lid 123 voor de machine 18 vanaf 10:00 18/04/2023 eindigt op <u>10:15 18/04/2023</u>.
+
 
 | <u>456</u> - <u>23</u> - <u>9:00 17/04/2023</u>    | <u>9:20 17/04/2023</u>    |
 |----------------------------------------------------|---------------------------|
@@ -545,23 +584,27 @@ De reservering van lid 123 voor de machine 18 vanaf 10:00 18/04/2023 eindigt op 
 | ID: ET Member + ET Machine + att start_timestamp   |                           |
 | MATCH        MATCH                                 |                           |
 
+
 De reservering van lid < member_id > voor de machine < machine_id > vanaf < start_timestamp > eindigt op < end_timestamp >.
 RT MEMBER_of_MACHINE_RESERVATION tussen MACHINE_RESERVATION(dependent) en MEMBER.
 RT MACHINE_of_MACHINE_RESERVATION tussen MACHINE_RESERVATION(dependent) en MACHINE.
 
------------------------------------------------------------------------------------
-#### 35 Eindtijd van begeleiding
+
+#### 33 Eindtijd van begeleiding
 De begeleider <u>876</u> overziet de ruimte <u>XYZ</u> vanaf <u>8:30 17/04/2023</u> tot <u>12:30 17/04/2023</u>.
+
 
 | <u>902</u> - <u>ABC</u> - <u>15:00 23/05/2023</u> | <u>20:00 23/05/2023</u> |
 |---------------------------------------------------|-------------------------|
 | ET: FitnessRoomSchedule                           | Att: end_timestamp      |
 | ID: ET Employee + ET Room + att start_timestamp   |                         |
 | MATCH MATCH                                       |                         |
+
  
 De begeleider < employee_id > overziet de ruimte < room_id > vanaf < start_timestamp > tot < end_timestamp >.
 RT EMPLOYEE_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en EMPLOYEE.
 RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
+
 
 ## 4. Use cases
 
@@ -569,42 +612,42 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 ![UCD](BestFitUCD.svg "UCD")
 
 ### 4.2 Brief Descriptions
-| Use case | Actor           | Naam                     | Brief Description                                                                                                                            |
-|----------|-----------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| UC-01    | Lid             | Afsluiten abonnement     | Een lid sluit een abonnement af van variërende duur.                                                                                         |
-| UC-02    | Lid             | Verlengen abonnement     | Een lid verlengt een aflopend abonnement.                                                                                                    |
-| UC-03    | Lid             | Opzeggen abonnement      | Een lid kan een afgesloten abonnement opzeggen.                                                                                              |
-| UC-04    | Lid             | Inzien abonnement        | Een lid ziet zijn / haar huidige actieve abonnement(en) in.                                                                                  |
-| UC-05    | Lid             | Inschrijven groepsles    | Het lid schrijft zich onder een bepaalde naam in voor een groepsles. Hierbij kan het lid aangeven voor hoe veel mensen deze inschrijving is. |
-| UC-06    | Lid             | Uitschrijven groepsles   | Het lid kan zich uitschrijven voor een groepsles waar hij of zij zich voor heeft ingeschreven.                                               |
-| UC-07    | Lid             | Plaatsen reservering     | Het lid plaatst een reservering voor een machine of squashruimte.                                                                            |
-| UC-08    | Lid             | Uitschrijven reservering | Het lid schrijft zich uit voor een reservering.                                                                                              |
-| UC-09    | Lid             | Aanpassen reservering    | Het lid verplaatst een reservering voor een specifieke machine.                                                                              |
-| UC-10    | Lid, Medewerker | Inzien rooster           | Het lid of de medewerker geeft aan zijn rooster te willen bekijken en krijgt alle informatie over rooster te zien.                           |
-| UC-11    | Medewerker      | Zetten machinestatus     | Een medewerker past de status van een machine aan omdat deze bijvoorbeeld kapot is of weer gerepareerd is.                                   |
-| UC-12    | Medewerker      | Inplannen groepsles      | Een medewerker plant een groepsles in binnen een bepaalde ruimte om een bepaalde tijd.                                                       |
-| UC-13    | Medewerker      | Verplaatsen groepsles    | Een medewerker verplaatst een bepaalde groepsles naar een bepaalde tijd.                                                                     |
-| UC-14    | Medewerker      | Afzeggen groepsles       | Een medewerker zegt een groepsles af.                                                                                                        |    
-| UC-15    | Medewerker      | Toewijzen medewerker     | Leden kunnen een abonnement afsluiten van variërende duur.                                                                                   |
-| UC-16    | Klant           | Aanmelden Lid            | Een klant wordt lid van Best Fit door een abonnement af te sluiten en persoonlijke informatie op te slaan.                                   |
+| Use case | Actor           | Naam                     | Brief Description                                                                                                                            | User story                        |
+|----------|-----------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| UC-01    | Lid             | Afsluiten abonnement     | Een lid sluit een abonnement af van variërende duur.                                                                                         | US-01                             |
+| UC-02    | Lid             | Verlengen abonnement     | Een lid verlengt een aflopend abonnement.                                                                                                    | US-03                             |
+| UC-03    | Lid             | Opzeggen abonnement      | Een lid kan een afgesloten abonnement opzeggen.                                                                                              | US-02                             |
+| UC-04    | Lid             | Inzien abonnement        | Een lid ziet zijn / haar huidige actieve abonnement(en) in.                                                                                  | US-04                             |
+| UC-05    | Lid             | Inschrijven groepsles    | Het lid schrijft zich onder een bepaalde naam in voor een groepsles. Hierbij kan het lid aangeven voor hoe veel mensen deze inschrijving is. | US-13                             |
+| UC-06    | Lid             | Uitschrijven groepsles   | Het lid kan zich uitschrijven voor een groepsles waar hij of zij zich voor heeft ingeschreven.                                               | US-14                             |
+| UC-07    | Lid             | Plaatsen reservering     | Het lid plaatst een reservering voor een machine of squashruimte.                                                                            | US-05, US-06                      |
+| UC-08    | Lid             | Uitschrijven reservering | Het lid schrijft zich uit voor een reservering.                                                                                              | US-07, US-08                      |
+| UC-09    | Lid             | Aanpassen reservering    | Het lid verplaatst een reservering voor een machine of squashruimte.                                                                         | US-09, US-10                      |
+| UC-10    | Lid, Medewerker | Inzien rooster           | Het lid of de medewerker geeft aan zijn rooster te willen bekijken en krijgt alle informatie over rooster te zien.                           | US-11, US-12, US-15, US-19, US-22 |
+| UC-11    | Medewerker      | Zetten machinestatus     | Een medewerker past de status van een machine aan omdat deze bijvoorbeeld kapot is of weer gerepareerd is.                                   | US-16                             |                                                                                                                                              |            |
+| UC-12    | Medewerker      | Inplannen groepsles      | Een medewerker plant een groepsles in binnen een bepaalde ruimte om een bepaalde tijd.                                                       | US-17                             |
+| UC-13    | Medewerker      | Aanpassen groepsles      | Een medewerker past gegevens van een ingeroosterde groepsles aan.                                                                            | US-20                             |
+| UC-14    | Medewerker      | Afzeggen groepsles       | Een medewerker zegt een groepsles af.                                                                                                        | US-18                             |  
+| UC-15    | Medewerker      | Toewijzen medewerker     | Een manager kan medewerkers toewijzen aan ruimtes.                                                                                           | US-21                             |
+| UC-16    | Klant           | Aanmelden Lid            | Een klant wordt lid van Best Fit door een abonnement af te sluiten en persoonlijke informatie op te slaan.                                   | US-24                             |
 
 
 ### 4.3 Fully Dressed use cases
 #### UC-01
-| Afsluiten abonnement                                           |                                                                                               |
-|----------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| **Primaire actor(en):**                                        | Lid.                                                                                          |
-| **Stakeholders:**                                              | Bestuur Best Fit. Aandeelhouders Best Fit.                                                    |
-| **Brief description:**                                         | Een lid sluit een abonnement af van variërende duur.                                          |
-| **Precondities:**                                              |                                                                                               |
-| **Postcondities:**                                             | Er staat een abonnement actief op naam van het lid                                            |
-| **Hoofd successcenario:**                                      |                                                                                               |
-| **Actor Actie**                                                | **Systeemverantwoordelijkheid**                                                               |
-| 1. Een lid geeft aan een abonnement af te willen sluiten.      |                                                                                               |
-|                                                                | 5. Het systeem vraagt het lid om een abonnement te selecteren.                                |
-| 6. Het lid kiest een abonnement en bevestigt deze.             |                                                                                               |
-|                                                                | 7. Het systeem slaat het abonnement op onder naam van het betreffende lid.                    |
-| **Alternatieve Stroom:**                                       |                                                                                               |
+| Afsluiten abonnement                                      |                                                                            |
+|-----------------------------------------------------------|----------------------------------------------------------------------------|
+| **Primaire actor(en):**                                   | Lid.                                                                       |
+| **Stakeholders:**                                         | Bestuur Best Fit. Aandeelhouders Best Fit.                                 |
+| **Brief description:**                                    | Een lid sluit een abonnement af van variërende duur.                       |
+| **Precondities:**                                         |                                                                            |
+| **Postcondities:**                                        | Er staat een abonnement actief op naam van het lid                         |
+| **Hoofd successcenario:**                                 |                                                                            |
+| **Actor Actie**                                           | **Systeemverantwoordelijkheid**                                            |
+| 1. Een lid geeft aan een abonnement af te willen sluiten. |                                                                            |
+|                                                           | 2. Het systeem vraagt het lid om een abonnement te selecteren.             |
+| 3. Het lid kiest een abonnement en bevestigt deze.        |                                                                            |
+|                                                           | 4. Het systeem slaat het abonnement op onder naam van het betreffende lid. |
+| **Alternatieve Stroom:**                                  |                                                                            |
 
 
 #### UC-02
@@ -613,7 +656,7 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 | **Primaire actor(en):**                                               | Lid.                                                                                                          |
 | **Stakeholders:**                                                     | Bestuur Best Fit. Aandeelhouders Best Fit.                                                                    |
 | **Brief description:**                                                | Een lid verlengt een aflopend abonnement.                                                                     |
-| **Precondities:**                                                     | Een lid heeft UC-01 met succes afgerond.<br/>Het abonnement dat is afgesloten in UC-01 is actief.             |
+| **Precondities:**                                                     | Het lid heeft een actief abonnement om te verlengen.                                                          |
 | **Postcondities:**                                                    | De verloopdatum van het abonnement van het lid is verschoven met de gekozen duur.                             |
 | **Hoofd successcenario:**                                             |                                                                                                               |
 | **Actor Actie**                                                       | **Systeemverantwoordelijkheid**                                                                               |
@@ -631,7 +674,7 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 | **Primaire actor(en):**                                    | Lid.                                                                                                                  |
 | **Stakeholders:**                                          |                                                                                                                       |
 | **Brief description:**                                     | Een lid kan een afgesloten abonnement opzeggen.                                                                       |
-| **Precondities:**                                          | Een lid heeft UC-01 met succes afgerond.<br/>Het abonnement dat is afgesloten in UC-01 is actief.                     |
+| **Precondities:**                                          | Het lid heeft een actief abonnement om .                                                                              |
 | **Postcondities:**                                         | Het abonnement is vanaf het volgende betalingsmoment inactief en er wordt geen geld meer afgeschreven van het lid.    |
 | **Hoofd successcenario:**                                  |                                                                                                                       |
 | **Actor Actie**                                            | **Systeemverantwoordelijkheid**                                                                                       |
@@ -682,7 +725,7 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 | **Primaire actor(en):**                                                                                  | Lid.                                                                                           |
 | **Stakeholders:**                                                                                        |                                                                                                |
 | **Brief description:**                                                                                   | Het lid kan zich uitschrijven voor een groepsles waar hij of zij zich voor heeft ingeschreven. |
-| **Precondities:**                                                                                        | Het lid heeft UC-04 met succes afgerond.                                                       |
+| **Precondities:**                                                                                        | Het lid bekijkt zijn inschrijving.                                                             |
 | **Postcondities:**                                                                                       | Het lid is uitgeschreven voor de groepsles waar hij of zij voor ingeschreven stond.            |
 | **Hoofd successcenario:**                                                                                |                                                                                                |
 | **Actor Actie**                                                                                          | **Systeemverantwoordelijkheid**                                                                |
@@ -721,7 +764,7 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 | **Primaire actor(en):**                                                                    | Lid                                                                                                                                               |
 | **Stakeholders:**                                                                          |                                                                                                                                                   |
 | **Brief description:**                                                                     | Het lid schrijft zich uit voor een reservering.                                                                                                   |
-| **Precondities:**                                                                          | Het lid heeft UC-06 met success afgerond.                                                                                                         |
+| **Precondities:**                                                                          | Het lid heeft een reservering geplaatst.                                                                                                          |
 | **Postcondities:**                                                                         | De reservering van het lid is verwijderd uit het systeem.                                                                                         |
 | **Hoofd successcenario:**                                                                  |                                                                                                                                                   |
 | **Actor Actie**                                                                            | **Systeemverantwoordelijkheid**                                                                                                                   |
@@ -737,7 +780,7 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 | **Primaire actor(en):**                                     | Lid                                                                                                                                 |
 | **Stakeholders:**                                           |                                                                                                                                     |
 | **Brief description:**                                      | Het lid verplaatst een reservering voor een specifieke machine.                                                                     |
-| **Precondities:**                                           | Het lid heeft UC-06 met success afgerond.                                                                                           |
+| **Precondities:**                                           | Het lid heeft een reservering geplaatst.                                                                                            |
 | **Postcondities:**                                          | De datum en tijd van de reservering zijn aangepast in het systeem.                                                                  |
 | **Hoofd successcenario:**                                   |                                                                                                                                     |
 | **Actor Actie**                                             | **Systeemverantwoordelijkheid**                                                                                                     |
@@ -799,23 +842,23 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 |                                                                                                                                                         | 4a. Het systeem weergeeft een foutmelding omdat de begeleider bijvoorbeeld om het gekozen tijdstip geen tijd heeft of omdat de ruimte niet vrij is. |
 
 #### UC-13
-| Verplaatsen groepsles                                                             |                                                                                                                                                     |
-|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Primaire actor(en):**                                                           | Medewerker                                                                                                                                          |
-| **Stakeholders:**                                                                 | Lid                                                                                                                                                 |
-| **Brief description:**                                                            | Een medewerker verplaatst een bepaalde groepsles naar een bepaalde tijd.                                                                            |
-| **Precondities:**                                                                 |                                                                                                                                                     |
-| **Postcondities:**                                                                | De groepsles staat opgeslagen in het systeem en de tijd van de groepsles is aangepast.                                                              |
-| **Hoofd successcenario:**                                                         |                                                                                                                                                     |
-| **Actor Actie**                                                                   | **Systeemverantwoordelijkheid**                                                                                                                     |
-| 1. Een medewerker geeft aan een groepsles te willen verplaatsen.                  |                                                                                                                                                     |
-|                                                                                   | 2. Het systeem weergeeft een overzicht van alle groepslessen.                                                                                       |
-| 3. De medewerker selecteert een specifieke groepsles om te verplaatsen            |                                                                                                                                                     |
-|                                                                                   | 4. Het systeem weergeeft een overzicht met alle beschikbare ruimtes en tijden.                                                                      |
-| 5. De medewerker kiest een nieuwe tijd voor de groepsles en bevestigt zijn keuze. |                                                                                                                                                     |
-|                                                                                   | 6. Het systeem verplaatst de groepsles naar de nieuwe gekozen tijd.                                                                                 |
-| **Alternatieve Stroom:**                                                          |                                                                                                                                                     |
-|                                                                                   | 6a. Het systeem weergeeft een foutmelding omdat de begeleider bijvoorbeeld om het gekozen tijdstip geen tijd heeft of omdat de ruimte niet vrij is. |
+| Aanpassen groepsles                                                    |                                                                                                                |
+|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| **Primaire actor(en):**                                                | Medewerker                                                                                                     |
+| **Stakeholders:**                                                      | Lid                                                                                                            |
+| **Brief description:**                                                 | Een medewerker past gegevens van een ingeroosterde groepsles aan.                                              |
+| **Precondities:**                                                      |                                                                                                                |
+| **Postcondities:**                                                     | De groepsles staat opgeslagen in het systeem met de opgegeven nieuwe gegevens.                                 |
+| **Hoofd successcenario:**                                              |                                                                                                                |
+| **Actor Actie**                                                        | **Systeemverantwoordelijkheid**                                                                                |
+| 1. Een medewerker geeft aan een groepsles te willen aanpassen.         |                                                                                                                |
+|                                                                        | 2. Het systeem geeft een overzicht van alle groepslessen weer.                                                 |
+| 3. De medewerker selecteert een specifieke groepsles om aan te passen. |                                                                                                                |
+|                                                                        | 4. Het systeem geeft een overzicht met alle instellingen voor de gekozen groepsles weer.                       |
+| 5. De medewerker past de gegevens naar keuze aan.                      |                                                                                                                |
+|                                                                        | 6. Het systeem verandert de gegevens van de gekozen groepsles en slaat deze op.                                |
+| **Alternatieve Stroom:**                                               |                                                                                                                |
+|                                                                        | 6a. Het systeem geeft een foutmelding omdat de medewerker een instelling heeft gekozen die niet is toegestaan. |
 
 
 #### UC-14
@@ -863,7 +906,7 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 | **Primaire actor(en):**                                                                | Klant                                                                                                     |
 | **Stakeholders:**                                                                      |                                                                                                           |
 | **Brief description:**                                                                 | Een klant wordt lid van Best Fit door een abonnement af te sluiten en persoonlijke informatie op te slaan |
-| **Precondities:**                                                                      | -                                                                                                         |
+| **Precondities:**                                                                      |                                                                                                           |
 | **Postcondities:**                                                                     | Het systeem heeft de informatie en een abonnement van het nieuwe lid opgeslagen.                          |
 | **Hoofd successcenario:**                                                              |                                                                                                           |
 | **Actor Actie**                                                                        | **Systeemverantwoordelijkheid**                                                                           |
@@ -882,64 +925,69 @@ RT ROOM_FITNESS_ROOM_SCHEDULE tussen FITNESS_ROOM_SCHEDULE(dependent) en ROOM.
 
 ### 5.1 Business Rules
 
-| **Code** | **Business Rule**                                                                         | **Gerelateerde user story**                     |
-|----------|-------------------------------------------------------------------------------------------|-------------------------------------------------|
-| BR-01    | Een lid mag in zijn rooster geen overlappende inschrijvingen of reserveringen hebben.     | US-05 t/m US-15 exclusief (US-07, US-08, US-14) |
-| BR-02    | Een medewerker mag in zijn rooster geen overlappende diensten en groepslessen hebben.     | US-17 t/m US-22 exclusief (US-18)               |
-| BR-03    | Voor leden onder de 18 moeten de gegevens van een voogd opgeslagen worden.                | US-01, US-03                                    |
-| BR-04    | Een reservering van een squashruimte mag nooit een reservering voor 0 personen zijn.      | US-06, US-10                                    |
-| BR-05    | Een machine die buiten gebruik is mag niet gereserveerd worden.                           | US-05, US-09, US-16                             |
-| BR-06    | Een medewerker mag alleen groepslessen geven van types waar hij les in mag geven.         | US-17, US-20                                    |
-| BR-07    | Een abonnement mag niet inactief worden voordat de minimumlengte verlopen is.             | US-02                                           |
-| BR-08    | Alleen squashruimtes mogen gereserveerd worden.                                           | US-06                                           |
-| BR-09    | Alleen fitnessruimtes hebben machines.                                                    | US-22                                           |
-| BR-10    | Alleen in groepslesruimtes mogen groepslessen gegeven worden.                             | US-17, US-20                                    |
-| BR-11    | De minimumlengte van een abonnement mag niet 0 zijn.                                      | US-01, US-03                                    |
-| BR-12    | Alleen medewerkers die ook een instructeur zijn mogen groepslessen geven.                 | US-17, US-20                                    |
-| BR-13    | Een lid mag alleen reserveringen aanmaken die voor de einddatum van zijn abonnement zijn. | US-05, US-06, US-09, US-10, US-13               |
+| **Code** | **Business Rule**                                                                                                | **Gerelateerde user story**                     |
+|----------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| BR-01    | Een lid mag in zijn rooster geen overlappende inschrijvingen of reserveringen hebben.                            | US-05 t/m US-15 exclusief (US-07, US-08, US-14) |
+| BR-02    | Een medewerker mag in zijn rooster geen overlappende diensten en groepslessen hebben.                            | US-17 t/m US-22 exclusief (US-18)               |
+| BR-03    | Voor leden onder de 18 moeten de gegevens van een voogd opgeslagen worden.                                       | US-01, US-03                                    |
+| BR-04    | Een reservering van een squashruimte mag nooit een reservering voor 0 personen zijn.                             | US-06, US-10                                    |
+| BR-05    | Een machine die buiten gebruik is mag niet gereserveerd worden.                                                  | US-05, US-09, US-16                             |
+| BR-06    | Een medewerker mag alleen groepslessen geven van types waar hij les in mag geven.                                | US-17, US-20                                    |
+| BR-07    | Een abonnement aflopen voordat de minimumlengte verlopen is.                                                     | US-02                                           |
+| BR-08    | Alleen squashruimtes mogen gereserveerd worden.                                                                  | US-06                                           |
+| BR-09    | Alleen fitnessruimtes hebben machines.                                                                           | US-22                                           |
+| BR-10    | Alleen in groepslesruimtes mogen groepslessen gegeven worden.                                                    | US-17, US-20                                    |
+| BR-11    | De minimumlengte van een abonnement mag niet 0 zijn.                                                             | US-01, US-03                                    |
+| BR-12    | Een lid mag alleen reserveringen aanmaken die voor de einddatum van zijn abonnement zijn.                        | US-05, US-06, US-09, US-10, US-13               |
+| BR-13    | Een lid mag niet twee actieve abonnementen hebben van hetzelfde type.                                            |                                                 |
+| BR-14    | Een lid mag alleen een abonnement hebben die binnen de minimum en maximum leeftijd van het abonnementstype valt. | US-01, US-03                                    |
+| BR-15    | Een lid mag geen abonnement afsluiten van hetzelfde type als de abonnementen die het lid al heeft.               | US-01, US-03                                    |
 
 ### 5.2 Constraints
 Bij het vertalen van business rules naar constraints hebben we dezelfde nummering aangehouden. Constraint C-01 is dus ontstaan uit BR-01, constraint SDR-03 is ontstaan uit BR-03 etc.
 
-| **Code** | **Gerelateerde entiteiten**                                                          | **Constraint / SDR**                                                                                                                                            |
-|----------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| C-01     | ET Member, ET RoomReservation, ET MachineReservation, ET GroupClass                  | Reserveringen en inschrijvingen mogen niet van start gaan tussen de begintijd en eindtijd van een andere reserveringen en inschrijvingen.                       |
-| C-02     | ET Employee, ET GroupClass, ET FitnessRoomSchedule                                   | Diensten en groepslessen mogen niet van start gaan tussen de begintijd en eindtijd van een andere diensten en groepslessen.                                     |
-| SDR-03   | ET Member                                                                            | x IN Minor IF (x, birthdate is less than 18 years ago)  IN Member(member_id, birthdate).                                                                        |
-| C-04     | ET RoomReservation                                                                   | De quantity van een RoomReservation mag nooit 0 zijn.                                                                                                           |
-| C-05     | ET Machine, ET MachineReservation                                                    | Machines waarvan de status 'buiten gebruik' is mogen niet gereserveerd worden.                                                                                  |
-| C-06     | ET Employee, ET GroupClassType, ET GroupClass                                        | Een Employee mag alleen GroupClasses geven van types die de employee zelf ook kent.                                                                             |
-| C-07     | ET Subscription, ET SubscriptionType                                                 | De status van een subscription mag niet naar 'inactief' gezet mogen worden voordat minimaal de minimum_length van het SubscriptionType is verlopen.             |
-| SDR-08   | ET Room                                                                              | x IN RoomReservation IF (x, 'Reservable room') IN Room(room_id, functionality).                                                                                 |
-| SDR-09   | ET Room                                                                              | x IN FitnessRoom IF (x, 'Fitness room') IN Room(room_id, functionality).                                                                                        |
-| SDR-10   | ET Room                                                                              | x IN GroupClassRoom IF (x, 'Group class room') IN Room(room_id, functionality).                                                                                 |
-| C-11     | ET SubscriptionType                                                                  | De min_length van een SubscriptionType mag nooit 0 zijn.                                                                                                        |
-| C-12     | ET Role, ET Employee, ET GroupClass                                                  | Een Employee mag alleen groepslessen geven als hij de rol 'Instuctor' heeft.                                                                                    |
-| C-13     | ET Subscription, ET Member, ET RoomReservation, ET MachineReservation, ET GroupClass | Een RoomReservation, MachineReservation of inschrijving voor een GroupClass mag niet bestaan voor een datum na de einddatum van de Subscription van een Member. |
+| **Code** | **Gerelateerde entiteiten**                                                          | **Constraint / SDR**                                                                                                                                            | Gerelateerde Business Rule |
+|----------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| C-01     | ET Member, ET RoomReservation, ET MachineReservation, ET GroupClass                  | Reserveringen en inschrijvingen mogen niet van start gaan tussen de begintijd en eindtijd van een andere reserveringen en inschrijvingen.                       | BR-01                      |
+| C-02     | ET Employee, ET GroupClass, ET FitnessRoomSchedule                                   | Diensten en groepslessen mogen niet van start gaan tussen de begintijd en eindtijd van een andere diensten en groepslessen.                                     | BR-02                      |
+| SDR-03   | ET Member                                                                            | x IN Minor IF (x, birthdate is less than 18 years ago)  IN Member(member_id, birthdate).                                                                        | BR-03                      |
+| C-04     | ET RoomReservation                                                                   | De quantity van een RoomReservation mag nooit 0 zijn.                                                                                                           | BR-04                      |
+| C-05     | ET Machine, ET MachineReservation                                                    | Machines waarvan de status 'buiten gebruik' is mogen niet gereserveerd worden.                                                                                  | BR-05                      |
+| C-06     | ET Employee, ET GroupClassType, ET GroupClass                                        | Een Employee mag alleen GroupClasses geven van types die de employee zelf ook kent.                                                                             | BR-06                      |
+| C-07     | ET Subscription, ET SubscriptionType                                                 | De end_date van een Subscription mag niet eerder zijn dan de start_date +  min_length van de SubscriptionType.                                                  | BR-07                      |
+| SDR-08   | ET Room                                                                              | x IN RoomReservation IF (x, 'Reservable room') IN Room(room_id, functionality).                                                                                 | BR-08                      |
+| SDR-09   | ET Room                                                                              | x IN FitnessRoom IF (x, 'Fitness room') IN Room(room_id, functionality).                                                                                        | BR-09                      |
+| SDR-10   | ET Room                                                                              | x IN GroupClassRoom IF (x, 'Group class room') IN Room(room_id, functionality).                                                                                 | BR-10                      |
+| C-11     | ET SubscriptionType                                                                  | De min_length van een SubscriptionType mag nooit 0 zijn.                                                                                                        | BR-11                      |
+| C-12     | ET Subscription, ET Member, ET RoomReservation, ET MachineReservation, ET GroupClass | Een RoomReservation, MachineReservation of inschrijving voor een GroupClass mag niet bestaan voor een datum na de einddatum van de Subscription van een Member. | BR-12                      |
+| C-13     | ET Subscription, ET Member, ET SubscriptionType                                      | Een Member mag niet twee actieve Subscriptions van hetzelfde SubscriptionType.                                                                                  | BR-13                      |
+| C-14     | ET Subscription, ET SubscriptionType, ET Member                                      | De leeftijd van een Member mag niet buiten de minimum en maximum leeftijd van het SubscriptionType vallen.                                                      | BR-14                      |
+| C-15     | ET Subscription, ET SubscriptionType                                                 | Een Member mag geen Subscription afsluiten van hetzelfde type als de Subscriptions die de member al heeft.                                                      | BR-15                      |
 
 ## 6. Interactiemodel (CRUD-matrix)
-| Code  | Use case                 |  Member | Guardian | Subscription | SubscriptionType | GroupClassType | Employee | GroupClass | RoomReservation | MachineReservation | Machine | MachineType | Room | FitnessRoomSchedule |
-|-------|--------------------------|---------|----------|--------------|------------------|----------------|----------|------------|-----------------|--------------------|---------|-------------|------|---------------------|
-| UC-01 | Afsluiten abonnement     | R       | R        | C            | R                |                |          |            |                 |                    |         |             |      |                     |
-| UC-02 | Verlengen abonnement     | R       | R        | U            | R                |                |          |            |                 |                    |         |             |      |                     |
-| UC-03 | Opzeggen abonnement      | R       | R        | D            | R                |                |          |            |                 |                    |         |             |      |                     |
-| UC-04 | Inzien abonnement        |         | R        | R            | R                |                |          |            |                 |                    |         |             |      |                     |
-| UC-05 | Inschrijven groepsles    | R       |          | R            | R                |                |          | R          |                 |                    |         |             |      |                     |
-| UC-06 | Uitschrijven groepsles   | R       |          |              |                  |                |          | R          |                 |                    |         |             |      |                     |
-| UC-07 | Plaatsen reserveringen   | R       |          |              |                  |                |          | R          | C               | C                  | R       | R           | R    |                     |
-| UC-08 | Uitschrijven reservering | R       |          |              |                  |                |          |            | D               | D                  | R       |             |      |                     |
-| UC-09 | Aanpassen reservering    | R       |          |              |                  |                |          |            | U               | U                  | R       |             |      |                     |
-| UC-10 | Bekijken rooster         | R       |          |              |                  |                | R        | R          | R               | R                  | R       |             |      | R                   |
-| UC-11 | Zetten machinestatus     |         |          |              |                  |                | R        |            |                 |                    | U       |             |      |                     |
-| UC-12 | Inplannen groepsles      |         |          |              |                  | R              | R        | C          |                 |                    |         |             | R    |                     |
-| UC-13 | Verplaatsen groepsles    |         |          |              |                  | R              | R        | U          |                 |                    |         |             |      |                     |
-| UC-14 | Afzeggen groepsles       |         |          |              |                  |                |          | D          |                 |                    |         |             |      |                     |
-| UC-15 | Medewerker toewijzen     |         |          |              |                  |                | R        |            |                 |                    |         |             | U    | C                   |
+| Code  | Use case                 | Member | Guardian | Subscription | SubscriptionType | GroupClassType | Employee | GroupClass | RoomReservation | MachineReservation | Machine | MachineType | Room | FitnessRoomSchedule |
+|-------|--------------------------|--------|----------|--------------|------------------|----------------|----------|------------|-----------------|--------------------|---------|-------------|------|---------------------|
+| UC-01 | Afsluiten abonnement     | R      | R        | C            | R                |                |          |            |                 |                    |         |             |      |                     |
+| UC-02 | Verlengen abonnement     | R      | R        | U            | R                |                |          |            |                 |                    |         |             |      |                     |
+| UC-03 | Opzeggen abonnement      | R      | R        | D            | R                |                |          |            |                 |                    |         |             |      |                     |
+| UC-04 | Inzien abonnement        |        | R        | R            | R                |                |          |            |                 |                    |         |             |      |                     |
+| UC-05 | Inschrijven groepsles    | R      |          | R            | R                |                |          | R          |                 |                    |         |             |      |                     |
+| UC-06 | Uitschrijven groepsles   | R      |          |              |                  |                |          | R          |                 |                    |         |             |      |                     |
+| UC-07 | Plaatsen reserveringen   | R      |          |              |                  |                |          | R          | C               | C                  | R       | R           | R    |                     |
+| UC-08 | Uitschrijven reservering | R      |          |              |                  |                |          |            | D               | D                  | R       |             |      |                     |
+| UC-09 | Aanpassen reservering    | R      |          |              |                  |                |          |            | U               | U                  | R       |             |      |                     |
+| UC-10 | Bekijken rooster         | R      |          |              |                  |                | R        | R          | R               | R                  | R       |             |      | R                   |
+| UC-11 | Zetten machinestatus     |        |          |              |                  |                | R        |            |                 |                    | U       |             |      |                     |
+| UC-12 | Inplannen groepsles      |        |          |              |                  | R              | R        | C          |                 |                    |         |             | R    |                     |
+| UC-13 | Aanpassen groepsles      |        |          |              |                  | R              | R        | U          |                 |                    |         |             |      |                     |
+| UC-14 | Afzeggen groepsles       |        |          |              |                  |                |          | D          |                 |                    |         |             |      |                     |
+| UC-15 | Medewerker toewijzen     |        |          |              |                  |                | R        |            |                 |                    |         |             | U    | C                   |
+| UC-16 | Aanmelden lid            | R      |          | R            |                  |                |          |            |                 |                    |         |             |      |                     |
 
 ## 7. Gebruikers
 
-De applicatie die gerealiseerd gaat worden heeft verschillende soorten gebruikers,
-in dit hoofdstuk worden al soorten gebruikers kort benoemd en wat hen rechten binnen het systeem bevatten.
+De applicatie die gerealiseerd gaat worden, heeft verschillende soorten gebruikers.
+In dit hoofdstuk worden alle soorten gebruikers kort benoemd en wat hun rechten binnen het systeem zijn.
 
 ### 7.1 Member
 
@@ -947,7 +995,7 @@ Het systeem kent onder andere de gebruiker genaamd 'member' en dit is een lid va
 reserveringen te maken voor machines en zich in te schrijven voor groepslessen. Alle members met reserveringen of inschrijvingen 
 hebben ook de rechten om zijn of haar reservering of inschrijving te annuleren of te verplaatsen/veranderen als een andere datum beter uitkomt of als de 
 member besluit liever een andere groepsles te volgen. Als een member zijn of haar abonnement wil verlengen kan hij of zij dat
-zelf, ook kan de member een abonnement afsluiten en opzeggen mits de minimale lengte van het abonnement voorbij is.
+zelf. Ook kan de member een abonnement afsluiten en opzeggen als de minimale lengte van het abonnement voorbij is.
 
 ### 7.2 Employee
 
@@ -962,8 +1010,51 @@ deze medewerker heeft dan ook meer rechten in het systeem dan gewone medewerkers
 plus de rechten om een groepsles af te zeggen of te verplaatsen. Ook kunnen managers medewerkers toewijzen aan een ruimte 
 en kunnen ze het lesrooster inzien van andere employees.
 
-### 7.4 Admin
+## 8. Designkeuzes
 
-De admin gebruiker heeft alle rechten in het hele systeem. Dit is van belang, omdat 
-mocht er een fout gemaakt worden bij het ingeven van gegevens o.i.d., dan kan de admin dit aanpassen.
-**Deze rol moet nog besproken worden**
+### 8.1 Lid en Medewerker identity
+Bij het werken aan het PDM hebben wij er voor gekozen om ID's als getallen op te slaan en deze automatisch te genereren
+door gebruik te maken van een auto-increment feature. Omdat we een staging area gaan bouwen die op basis van een uniek attribuut persoonsgegevens
+op gaat halen moeten we gebruik maken van een ID. Emails zijn ook uniek en zouden ook gebruikt kunnen als primary identifier van de Member entiteit,
+maar het is niet zo veilig om roosters op te halen op basis van emails. Na een gesprek met de opdrachtgever bleek dat er twee problemen
+met deze manier van handelen.
+
+Het eerste probleem zat in het feit dat er bij het ophalen van informatie over leden en medewerkers gebruik
+gemaakt moet worden van deze ID's. Door het feit dat ID's getallen waren die bij iedere nieuwe gebruiker opgehoogd werden maakte
+dit het in principe mogelijk om met een for loop de informatie van alle gebruikers in het systeem op te halen. Om dit op te lossen hebben
+we ervoor gekozen om ID's als Strings op te slaan in de vorm van een UUID in plaats van als getallen. Door willekeurige Strings te
+genereren als UUID's wordt het een stuk lastiger om informatie van gebruikers op te halen.
+
+Het tweede probleem treedt op wanneer de database zou crashen. Op het moment dat na een crash een backup gebruikt wordt om de
+database te herstellen, begint de auto-increment feature opnieuw met tellen. Dit zorgt ervoor dat wanneer een nieuw lid zich aanmeldt
+het id overlapt met bestaande ID's, wat ervoor zorgt dat de ID's niet meer uniek zijn. Om dit te voorkomen is gebruik gemaakt
+van een UUID generator die controleert of een gegenereerd ID al bestaat. Als dit het geval is, blijft de generator net zo lang een
+nieuwe UUID genereren totdat het gegenereerde ID uniek is.
+
+### 8.2 Paid_until en subscription_status
+Wij hadden voorheen in onze Subscription tabel 2 kolommen genaamd: paid_until en subscription_status. Wij hebben ervoor gekozen
+om deze twee kolommen te schrappen omdat ze overbodig zijn. De paid_until sloeg een datum op die aangaf tot welke datum voor
+het bepaalde abonnement betaald was en de subscription_status kon 'Active' of 'Inactive' zijn wat betekende of de subscription
+actief is of niet. Wij kwamen er tijdens een gesprek met de opdrachtgever achter dat deze twee kolommen overbodig zijn omdat,
+je hetzelfde kan bereiken door te controleren of de huidige datum tussen de start- en einddatum is voor het gekozen abonnement.
+Om deze reden hebben wij ervoor gekozen om deze twee kolommen te schrappen uit onze database.
+
+### 8.3 Member en Minor
+In eerdere versies van het CDM hebben we Minor een subtype van Member gemaakt dat een relatie met zichzelf had. Het probleem
+met deze versie was dat een voogd altijd als member opgeslagen moest worden. Dit leek eerst de bedoeling te zijn, maar na een
+gesprek met de opdrachtgever bleek dat het niet de bedoeling was dat voogden als leden opgeslagen werden. Om dit probleem op
+te lossen hebben we het aangepast en attributen voor een voogd toegevoegd in plaats van dat er een relatie met een member was.
+
+### 8.4 Discount
+Eerder hadden wij een Discount entiteit die gekoppeld was aan Subscription. Deze entiteit was er om op te slaan wat voor een
+kortingen er op een abonnement waren en wanneer deze geldig waren. Uiteindelijk hebben wij deze weggehaald omdat de opdrachtgever
+vroeg om alles wat met geld en betalingen te maken had uit ons ontwerp te halen omdat dit niet zo veel met het systeem zelf te
+maken had.
+
+### 8.5 RoomReservation en Room
+We hebben er voor gekozen om in het systeem bij te houden wat voor een ruimtes de best fit allemaal heeft. Origineel waren we dit
+niet van plan omdat het niet echt relevant is voor de werking van het systeem totdat we erachter kwamen dat squash ruimtes gereserveerd
+moesten kunnen worden. We hebben er toen voor gekozen om alle ruimtes op te slaan in plaats van alleen de squashruimtes. Dit hebben
+we gedaan omdat dit het in de toekomst mogelijk zou maken om andere soorten ruimtes toe te voegen en reserveerbaar te maken.
+Uiteindelijk heeft deze keuze zijn vruchten afgeworpen toen we van de opdrachtgever hoorde dat medewerkers toegewezen moesten
+kunnen worden aan fitness ruimtes.

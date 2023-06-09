@@ -1,7 +1,8 @@
 FROM mcr.microsoft.com/mssql/server:2019-latest
 
 ENV ACCEPT_EULA y
-ENV SA_PASSWORD ISE_project
+ENV SA_PASSWORD BestFitSAExamplePassword0?
+# When deploying to production, change SA_PASSWORD to a strong password and store it in a secure manner.
 
 USER root
 

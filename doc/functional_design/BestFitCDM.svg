@@ -13,12 +13,11 @@
    <text x="1320" y="390" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">C-06 ET Employee, ET GroupClassType, ET GroupClass</text>
    <text x="1320" y="398" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Een Employee mag alleen GroupClasses geven van types die de </text>
    <text x="1320" y="406" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">employee zelf ook kent</text>
-   <rect x="1163" y="624" fill="#ffffff" width="181" height="80" stroke="#0000ff" stroke-width="1"/>
-   <text x="1253" y="651" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">C-07: ET Subscription, ET SubscriptionType</text>
-   <text x="1253" y="659" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">De status van een subscription mag niet naar </text>
-   <text x="1253" y="667" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">'inactief' gezet mogen worden voordat minimaal </text>
-   <text x="1253" y="675" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">de minimum_length van het SubscriptionType is </text>
-   <text x="1253" y="683" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">verlopen</text>
+   <rect x="1154" y="607" fill="#ffffff" width="196" height="103" stroke="#0000ff" stroke-width="1"/>
+   <text x="1252" y="649" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">C-07: ET Subscription, ET SubscriptionType</text>
+   <text x="1252" y="657" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">De end_date van een Subscritpion mag niet eerder </text>
+   <text x="1252" y="665" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">zijn dan de start_date + de min_length van het </text>
+   <text x="1252" y="673" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">SubscriptionType. </text>
    <rect x="1067" y="834" fill="#ffffff" width="225" height="63" stroke="#0000ff" stroke-width="1"/>
    <text x="1179" y="856" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">SDR-03:</text>
    <text x="1179" y="864" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">x IN Minor IF (x, birthdate is less than 18 years ago)  IN </text>
@@ -40,20 +39,20 @@
    <polygon fill="#800000" points="1028,791 1031,805 1025,805" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <text x="1028" y="831" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">IS_A_MINOR</text>
    <polyline fill="none" points="1075,976 1075,976 1028,976 1028,879" stroke="#800000" stroke-width="1"/>
-   <polyline fill="none" points="1342,742 1143,742" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#ffffff" points="1329,749 1316,742 1329,736" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <polyline fill="none" points="1342,746 1329,746" stroke="#800000" stroke-width="1"/>
-   <polyline fill="none" points="1342,739 1329,739" stroke="#800000" stroke-width="1"/>
-   <polyline fill="none" points="1316,737 1316,748" stroke="#800000" stroke-width="1"/>
-   <polyline fill="none" points="1157,748 1157,737" stroke="#800000" stroke-width="1"/>
-   <text x="1242" y="738" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MEMBER_in_SUBSCRIPTION</text>
-   <polyline fill="none" points="1484,722 1484,648" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#ffffff" points="1477,708 1484,695 1491,708" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <polyline fill="none" points="1481,722 1481,708" stroke="#800000" stroke-width="1"/>
-   <polyline fill="none" points="1487,722 1487,708" stroke="#800000" stroke-width="1"/>
-   <ellipse cx="1483" cy="691" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
-   <polyline fill="none" points="1478,661 1489,661" stroke="#800000" stroke-width="1"/>
-   <text x="1481" y="680" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">SUBSCRIPTION_TYPE_in_SUBSCRIPTION</text>
+   <polyline fill="none" points="1414,744 1143,744" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#ffffff" points="1400,751 1387,744 1400,738" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <polyline fill="none" points="1414,747 1400,747" stroke="#800000" stroke-width="1"/>
+   <polyline fill="none" points="1414,741 1400,741" stroke="#800000" stroke-width="1"/>
+   <polyline fill="none" points="1387,739 1387,750" stroke="#800000" stroke-width="1"/>
+   <polyline fill="none" points="1157,750 1157,739" stroke="#800000" stroke-width="1"/>
+   <text x="1278" y="755" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MEMBER_in_SUBSCRIPTION</text>
+   <polyline fill="none" points="1485,731 1485,648" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#ffffff" points="1478,718 1485,704 1492,718" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <polyline fill="none" points="1482,731 1482,718" stroke="#800000" stroke-width="1"/>
+   <polyline fill="none" points="1488,731 1488,718" stroke="#800000" stroke-width="1"/>
+   <ellipse cx="1485" cy="700" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
+   <polyline fill="none" points="1480,661 1490,661" stroke="#800000" stroke-width="1"/>
+   <text x="1482" y="685" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">SUBSCRIPTION_TYPE_in_SUBSCRIPTION</text>
    <polyline fill="none" points="106,723 106,655 235,655" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="112,710 101,710" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="249,664 222,655 249,646 249,664" stroke="#800000" stroke-width="1"/>
@@ -72,7 +71,7 @@
    <polyline fill="none" points="682,767 695,767" stroke="#800000" stroke-width="1"/>
    <ellipse cx="711" cy="764" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="896,759 896,770" stroke="#800000" stroke-width="1"/>
-   <text x="799" y="788" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MEMBER_in_MACHINE_RESERVATION</text>
+   <text x="797" y="788" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MEMBER_in_MACHINE_RESERVATION</text>
    <polyline fill="none" points="1484,489 1484,563" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1493,476 1484,503 1475,476 1493,476" stroke="#800000" stroke-width="1"/>
    <ellipse cx="1483" cy="506" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
@@ -84,19 +83,19 @@
    <ellipse cx="1268" cy="290" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1460,449 1469,423 1479,449 1460,449" stroke="#800000" stroke-width="1"/>
    <ellipse cx="1469" cy="419" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
-   <text x="1469" y="286" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">EMPLOYEE_GROUP_CLASS_TYPE</text>
+   <text x="1469" y="287" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">EMPLOYEE_GROUP_CLASS_TYPE</text>
    <polyline fill="none" points="1132,472 1355,472" stroke="#800000" stroke-width="1"/>
    <polygon fill="#ffffff" points="1145,465 1158,472 1145,479" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <polyline fill="none" points="1132,469 1145,469" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1132,475 1145,475" stroke="#800000" stroke-width="1"/>
    <ellipse cx="1161" cy="471" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1342,466 1342,477" stroke="#800000" stroke-width="1"/>
-   <text x="1246" y="468" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GROUP_CLASS_in_GROUP_CLASS_TYPE</text>
+   <text x="1243" y="468" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GROUP_CLASS_in_GROUP_CLASS_TYPE</text>
    <polyline fill="none" points="1065,447 1065,383 1066,383 1066,319" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1055,460 1065,434 1074,460 1055,460" stroke="#800000" stroke-width="1"/>
    <ellipse cx="1064" cy="430" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1060,332 1071,332" stroke="#800000" stroke-width="1"/>
-   <text x="1083" y="380" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GROUP_CLASS_EMPLOYEE</text>
+   <text x="1082" y="380" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GROUP_CLASS_EMPLOYEE</text>
    <polyline fill="none" points="1030,694 1030,500" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1020,707 1030,680 1039,707 1020,707" stroke="#800000" stroke-width="1"/>
    <ellipse cx="1029" cy="676" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
@@ -109,31 +108,31 @@
    <polyline fill="none" points="961,447 960,434" stroke="#800000" stroke-width="1"/>
    <ellipse cx="956" cy="416" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="893,267 893,256" stroke="#800000" stroke-width="1"/>
-   <text x="954" y="321" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GROUP_CLASS_ROOM</text>
+   <text x="954" y="322" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GROUP_CLASS_ROOM</text>
    <polyline fill="none" points="363,602 363,236" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="353,615 363,588 372,615 353,615" stroke="#800000" stroke-width="1"/>
    <ellipse cx="362" cy="584" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="357,250 368,250" stroke="#800000" stroke-width="1"/>
-   <text x="380" y="511" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MACHINE_ROOM</text>
+   <text x="380" y="512" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MACHINE_ROOM</text>
    <polyline fill="none" points="918,694 918,653 914,653 914,612" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="923,680 912,681" stroke="#800000" stroke-width="1"/>
    <polygon fill="#ffffff" points="922,625 915,638 908,625" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <polyline fill="none" points="917,612 918,625" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="911,612 912,625" stroke="#800000" stroke-width="1"/>
    <ellipse cx="915" cy="641" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
-   <text x="918" y="655" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MEMBER_SQUASH_RESERVATION</text>
+   <text x="916" y="655" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MEMBER_SQUASH_RESERVATION</text>
    <polyline fill="none" points="509,553 739,553" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="523,558 523,547" stroke="#800000" stroke-width="1"/>
    <polygon fill="#ffffff" points="726,559 713,553 726,546" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <polyline fill="none" points="739,556 726,556" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="739,549 726,549" stroke="#800000" stroke-width="1"/>
    <ellipse cx="709" cy="552" rx="3" ry="3" fill="#ffffff" stroke="#800000" stroke-width="1"/>
-   <text x="622" y="549" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">SQUASH_ROOM_SQUASH_RESERVATION</text>
+   <text x="624" y="549" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">SQUASH_ROOM_SQUASH_RESERVATION</text>
    <polyline fill="none" points="424,520 393,520 393,328" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="835,289 835,321 403,321" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="392,328 392,370 531,370" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="531,370 518,373 518,367" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="392" y="373" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">IS_A_ROOM</text>
+   <text x="392" y="374" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">IS_A_ROOM</text>
    <polyline fill="none" points="375,236 375,321 382,321" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1131,260 1131,167 907,167" stroke="#800000" stroke-width="1"/>
    <polyline fill="none" points="1136,246 1125,246" stroke="#800000" stroke-width="1"/>
@@ -247,22 +246,16 @@
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="1342" y="722" fill="url(#Gradient6)" width="293" height="72" stroke="#808000" stroke-width="1"/>
-   <text x="1488" y="733" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Subscription</text>
-   <line x1="1342" x2="1635" y1="739" y2="739" stroke="#808000" stroke-width="1"/>
-   <text x="1347" y="748" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_date</text>
-   <text x="1347" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_date</text>
-   <text x="1347" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">subscription_status</text>
-   <text x="1347" y="787" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">paid_until</text>
-   <text x="1442" y="748" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pi&gt;</text>
-   <text x="1471" y="748" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">DATE</text>
-   <text x="1471" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">DATE</text>
-   <text x="1471" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">SUBSCRIPTION_STATUS</text>
-   <text x="1471" y="787" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">DATE</text>
-   <text x="1604" y="748" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;M&gt;</text>
-   <text x="1604" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;M&gt;</text>
-   <text x="1604" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;M&gt;</text>
-   <text x="1604" y="787" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;M&gt;</text>
+   <rect x="1414" y="731" fill="url(#Gradient6)" width="149" height="53" stroke="#808000" stroke-width="1"/>
+   <text x="1488" y="742" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Subscription</text>
+   <line x1="1414" x2="1563" y1="748" y2="748" stroke="#808000" stroke-width="1"/>
+   <text x="1418" y="757" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_date</text>
+   <text x="1418" y="770" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_date</text>
+   <text x="1472" y="757" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pi&gt;</text>
+   <text x="1501" y="757" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">DATE</text>
+   <text x="1501" y="770" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">DATE</text>
+   <text x="1537" y="757" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;M&gt;</text>
+   <text x="1537" y="770" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;M&gt;</text>
    <defs>
       <linearGradient id="Gradient7" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
          <stop offset="5%" stop-color="#ffffff"/>

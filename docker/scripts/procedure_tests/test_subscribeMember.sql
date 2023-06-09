@@ -1,86 +1,115 @@
---US-01 Subscribe Member tests
 EXEC [tSQLt].[NewTestClass] 'testSubscribeMember'
 GO
 
-CREATE OR ALTER PROC testSubscribeMember.[test if a member can add a subscription]
+DROP PROCEDURE IF EXISTS testSubscribeMember.[SetUp]
+GO
+CREATE PROCEDURE testSubscribeMember.[SetUp]
 AS
 BEGIN
     EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Subscription'
     EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'SubscriptionType'
     EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Member'
 
+    INSERT INTO Member (member_id, email, birthdate) VALUES ('ABCDEFGHIJK-123456789012-ABCDEFGHIJK', 'john@doe.com', DATEADD(YEAR, -30, GETDATE()));
+    INSERT INTO SubscriptionType (type, min_length) VALUES ('All monthly', 4);
+END
+GO
+
+/*
+* T-01
+* Test if a member can add a subscription.
+*
+* Expects
+*   - No exceptions
+*/
+DROP PROCEDURE IF EXISTS testSubscribeMember.[test if a member can add a subscription]
+GO
+CREATE PROCEDURE testSubscribeMember.[test if a member can add a subscription]
+AS
+BEGIN
+    -- Assemble
+    DECLARE @a_month_from_now date = DATEADD(MONTH, 1, GETDATE())
+
+    -- Expect
     EXEC [tSQLt].[ExpectNoException]
-    INSERT INTO Member (member_id, birthdate) VALUES (1, '2000-01-01');
-    INSERT INTO SubscriptionType (type, min_length, min_age, max_age) VALUES ('ALL', 3, 21, NULL);
-    EXEC sproc_subscribeMember 1, 'ALL', '2023-06-09'
+
+    -- Act
+    EXEC sproc_subscribeMember 'ABCDEFGHIJK-123456789012-ABCDEFGHIJK', 'All monthly';
 END
 GO
 
-CREATE OR ALTER PROC testSubscribeMember.[test if a member can't add a subscription twice]
+/*
+* T-02
+* Test if a member can't add a subscription twice.
+*
+* Expects
+*   - Exception like: Violation of PRIMARY KEY constraint ''pk_subscription''. 
+*/
+DROP PROCEDURE IF EXISTS testSubscribeMember.[test if a member can't add a subscription twice]
+GO
+CREATE PROCEDURE testSubscribeMember.[test if a member can't add a subscription twice]
 AS
 BEGIN
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Subscription'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'SubscriptionType'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Member'
+    -- Assemble
+    EXEC [tSQLt].[ApplyConstraint] 'dbo.Subscription', 'pk_subscription'
 
+    -- Expect
     EXEC [tSQLt].[ExpectException]
-    INSERT INTO Member (member_id, birthdate) VALUES (1, '2000-01-01');
-    INSERT INTO SubscriptionType (type, min_length, min_age, max_age) VALUES ('ALL', 3, 21, NULL);
-    EXEC sproc_subscribeMember 1, 'ALL', '2023-06-09'
-    EXEC sproc_subscribeMember 1, 'ALL', '2023-06-09'
+        @ExpectedMessagePattern = '%Violation of PRIMARY KEY constraint ''pk_subscription''.%'
+
+    -- Act
+    EXEC sproc_subscribeMember 'ABCDEFGHIJK-123456789012-ABCDEFGHIJK', 'All monthly';
+    EXEC sproc_subscribeMember 'ABCDEFGHIJK-123456789012-ABCDEFGHIJK', 'All monthly';
 END
 GO
 
-CREATE OR ALTER PROC testSubscribeMember.[test if a member can't add a subscription when they're too young]
+/*
+* T-03
+* test if a non-existing member can't add a subscription
+*
+* Expects
+*   - Exception like: '%The INSERT statement conflicted with the FOREIGN KEY constraint%'
+*/
+DROP PROCEDURE IF EXISTS testSubscribeMember.[test if a non-existing member can't add a subscription]
+GO
+CREATE PROCEDURE testSubscribeMember.[test if a non-existing member can't add a subscription]
 AS
 BEGIN
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Subscription'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'SubscriptionType'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Member'
+    -- Assemble
+    EXEC tSQLt.ApplyConstraint 'dbo.Subscription', 'fk_subscrip_member_in_member'
 
-    EXEC [tSQLt].[ExpectException] @ExpectedMessage = 'Error occured in sproc ''sproc_subscribeMember''. Original message: ''The member does not fit the subscription due to their age.'''
-    INSERT INTO Member (member_id, birthdate) VALUES (1, '2020-01-01');
-    INSERT INTO SubscriptionType (type, min_length, min_age, max_age) VALUES ('ALL', 3, 21, NULL);
-    EXEC sproc_subscribeMember 1, 'ALL', '2023-06-09'
+    DECLARE @a_month_from_now date = DATEADD(MONTH, 1, GETDATE())
+
+    -- Expect
+    EXEC [tSQLt].[ExpectException] @ExpectedMessagePattern = '%The INSERT statement conflicted with the FOREIGN KEY constraint%'
+
+
+    -- Act
+    EXEC sproc_subscribeMember 'non-existent', 'All monthly';
 END
 GO
 
-CREATE OR ALTER PROC testSubscribeMember.[test if a member can't add a subscription when they're too old]
-AS
-BEGIN
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Subscription'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'SubscriptionType'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Member'
-
-    EXEC [tSQLt].[ExpectException] @ExpectedMessage = 'Error occured in sproc ''sproc_subscribeMember''. Original message: ''The member does not fit the subscription due to their age.'''
-    INSERT INTO Member (member_id, birthdate) VALUES (1, '1990-01-01');
-    INSERT INTO SubscriptionType (type, min_length, min_age, max_age) VALUES ('ALL', 3, NULL, 21);
-    EXEC sproc_subscribeMember 1, 'ALL', '2023-06-09'
-END
+/*
+* T-04
+* Test if a member can't add a non-existing subscription
+*
+* Expects
+*   - Exception like: '%The INSERT statement conflicted with the FOREIGN KEY constraint%'
+*/
+DROP PROCEDURE IF EXISTS testSubscribeMember.[test if a member can't add a non-existing subscription]
 GO
-
-CREATE OR ALTER PROC testSubscribeMember.[test if a non-existing member can't add a subscription]
+CREATE PROCEDURE testSubscribeMember.[test if a member can't add a non-existing subscription]
 AS
 BEGIN
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Subscription'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'SubscriptionType'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Member'
+    -- Assemble
+    EXEC tSQLt.ApplyConstraint 'dbo.Subscription', 'fk_subscrip_subscript_subscrip'
 
-    EXEC [tSQLt].[ExpectException] @ExpectedMessage = 'Error occured in sproc ''sproc_subscribeMember''. Original message: ''This member does not exist.'''
-    INSERT INTO SubscriptionType (type, min_length, min_age, max_age) VALUES ('ALL', 3, NULL, 21);
-    EXEC sproc_subscribeMember 1, 'ALL', '2023-06-09'
-END
-GO
+    DECLARE @a_month_from_now date = DATEADD(MONTH, 3, GETDATE())
 
-CREATE OR ALTER PROC testSubscribeMember.[test if a member can't add a non-existing subscription]
-AS
-BEGIN
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Subscription'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'SubscriptionType'
-    EXEC tSQLt.FakeTable @SchemaName = 'dbo', @TableName = 'Member'
+    -- Expect
+    EXEC [tSQLt].[ExpectException] @ExpectedMessagePattern = '%The INSERT statement conflicted with the FOREIGN KEY constraint%'
 
-    EXEC [tSQLt].[ExpectException] @ExpectedMessage = 'Error occured in sproc ''sproc_subscribeMember''. Original message: ''This subscription type does not exist.'''
-    INSERT INTO Member (member_id, birthdate) VALUES (1, '1990-01-01');
-    EXEC sproc_subscribeMember 1, 'ALL', '2023-06-09'
+    -- Act
+    EXEC sproc_subscribeMember 'ABCDEFGHIJK-123456789012-ABCDEFGHIJK', 'non-existent';
 END
 GO

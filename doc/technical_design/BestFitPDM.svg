@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="391mm" xmlns="http://www.w3.org/2000/svg" height="237mm" version="1.1" viewBox="0 0 1479 899" xmlns:xlink="http://www.w3.org/1999/xlink">
-   <polyline fill="none" points="1203,816 957,816" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="957,816 971,813 971,819" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="1080" y="815" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_SUBSCRIP_MEMBER_IN_MEMBER</text>
-   <text x="1080" y="823" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="1174" y="825" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
-   <polyline fill="none" points="1364,791 1364,691" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="1364,691 1367,705 1361,705" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="1364" y="740" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_SUBSCRIP_SUBSCRIPT_SUBSCRIP</text>
-   <text x="1364" y="748" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="1351" y="771" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="266,545 92,545 92,675" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="92,675 89,661 95,661" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <polyline fill="none" points="1223,819 957,819" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="957,819 970,816 970,822" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="1090" y="818" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_SUBSCRIP_MEMBER_IN_MEMBER</text>
+   <text x="1090" y="826" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="1194" y="831" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
+   <polyline fill="none" points="1358,804 1358,691" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="1358,691 1361,705 1355,705" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="1358" y="746" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_SUBSCRIP_SUBSCRIPT_SUBSCRIP</text>
+   <text x="1358" y="754" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="1343" y="784" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="266,545 91,545 91,675" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="91,675 88,661 94,661" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <text x="103" y="611" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MACHINE_MACHINE_M_MACHINET</text>
    <text x="103" y="619" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="236" y="556" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="237" y="554" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="354,714 354,581" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="354,581 357,594 351,594" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <text x="354" y="646" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MACHINER_MACHINE_I_MACHINE</text>
    <text x="354" y="654" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="341" y="695" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="506,750 737,750" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="737,750 724,753 724,747" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="342" y="695" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="505,750 737,750" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="737,750 723,753 723,747" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <text x="621" y="749" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MACHINER_MEMBER_IN_MEMBER</text>
    <text x="621" y="757" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="534" y="747" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="1358,432 1358,335" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="1358,335 1361,348 1355,348" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="1358" y="383" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUP_CL_GROUP_CLA_GROUPCLA</text>
-   <text x="1358" y="391" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="1344" y="413" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="533" y="747" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="1357,432 1357,335" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="1357,335 1360,348 1354,348" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="1357" y="382" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUP_CL_GROUP_CLA_GROUPCLA</text>
+   <text x="1357" y="390" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="1345" y="412" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="1364,485 1364,607" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="1364,607 1361,593 1367,593" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="1364" y="545" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUP_CL_GROUP_CLA_SUBSCRIP</text>
-   <text x="1364" y="553" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="1377" y="511" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
-   <polyline fill="none" points="1255,113 1255,203 993,203" stroke="#800000" stroke-width="1"/>
+   <text x="1363" y="545" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUP_CL_GROUP_CLA_SUBSCRIP</text>
+   <text x="1363" y="553" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="1375" y="510" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
+   <polyline fill="none" points="1254,113 1254,203 993,203" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="993,203 1006,200 1006,206" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="1254" y="202" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_EMPLOYEE_EMPOYEEGROUPCLASSTYPE</text>
-   <text x="1254" y="210" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="1267" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="1358,113 1358,281" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="1358,281 1355,268 1361,268" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="1357" y="197" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_EMPLOYEE_EMPLOYEE__GROUPCLA</text>
-   <text x="1357" y="205" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="1370" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="999,421 999,308 1268,308" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="1268,308 1254,311 1254,305" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="1254" y="201" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_EMPLOYEE_EMPOYEEGROUPCLASSTYPE</text>
+   <text x="1254" y="209" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="1266" y="138" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="1357,113 1357,281" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="1357,281 1354,268 1360,268" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="1357" y="196" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_EMPLOYEE_EMPLOYEE__GROUPCLA</text>
+   <text x="1357" y="204" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="1369" y="138" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="998,421 998,308 1267,308" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="1267,308 1254,311 1254,305" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <text x="1092" y="305" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUPCLA_GROUP_CLA_GROUPCLA</text>
    <text x="1092" y="313" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="985" y="402" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="914,421 914,232" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="914,232 917,246 911,246" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="908" y="255" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUPCLASS_EMPLOYEE</text>
-   <text x="908" y="263" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C)</text>
-   <text x="900" y="402" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="986" y="401" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="913,421 913,232" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="913,232 916,246 910,246" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="908" y="254" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUPCLASS_EMPLOYEE</text>
+   <text x="908" y="262" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C)</text>
+   <text x="901" y="401" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="847,639 847,735" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="847,735 844,722 850,722" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <text x="890" y="699" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MEMBER_G_MEMBER_GR_MEMBER</text>
    <text x="890" y="707" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="860" y="664" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="858" y="664" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="918,567 918,506" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="918,506 921,519 915,519" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="918" y="536" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MEMBER_G_MEMBER_GR_GROUPCLA</text>
-   <text x="918" y="544" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="905" y="549" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="846,421 846,381 624,381" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="624,381 637,378 637,384" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="736" y="379" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUPCLA_GROUP_CLA_ROOM</text>
-   <text x="736" y="387" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="832" y="402" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="918" y="535" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MEMBER_G_MEMBER_GR_GROUPCLA</text>
+   <text x="918" y="543" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="905" y="547" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="846,421 846,381 623,381" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="623,381 637,378 637,384" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="736" y="378" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_GROUPCLA_GROUP_CLA_ROOM</text>
+   <text x="736" y="386" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="833" y="401" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="354,509 354,387 467,387" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="467,387 454,390 454,384" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="366" y="411" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MACHINE_MACHINE_R_ROOM</text>
-   <text x="366" y="419" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C)</text>
-   <text x="341" y="490" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="365" y="410" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_MACHINE_MACHINE_R_ROOM</text>
+   <text x="365" y="418" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C)</text>
+   <text x="342" y="490" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="745,622 745,735" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="745,735 742,722 748,722" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
    <text x="703" y="665" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_ROOMRESE_MEMBER_SQ_MEMBER</text>
    <text x="703" y="673" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="758" y="647" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
-   <polyline fill="none" points="599,537 599,417" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="599,417 602,431 596,431" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="599" y="477" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_ROOMRESE_SQUASH_RO_ROOM</text>
-   <text x="599" y="485" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="585" y="519" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="756" y="647" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polyline fill="none" points="598,537 598,417" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="598,417 601,431 595,431" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="598" y="476" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_ROOMRESE_SQUASH_RO_ROOM</text>
+   <text x="598" y="484" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="586" y="518" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="597,172 597,203 834,203" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="834,203 821,206 821,200" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="710" y="203" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_FITNESSR_FITNESS_R_EMPLOYEE</text>
-   <text x="710" y="211" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="610" y="199" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <text x="710" y="201" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_FITNESSR_FITNESS_R_EMPLOYEE</text>
+   <text x="710" y="209" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="609" y="197" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <polyline fill="none" points="581,172 581,358" stroke="#800000" stroke-width="1"/>
    <polygon fill="#800000" points="581,358 578,345 584,345" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="581" y="265" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_FITNESSR_FITNESS_R_ROOM</text>
-   <text x="581" y="273" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="594" y="199" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
+   <text x="581" y="264" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_FITNESSR_FITNESS_R_ROOM</text>
+   <text x="581" y="272" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="593" y="197" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
    <polyline fill="none" points="875,28 675,28" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="675,28 689,25 689,31" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="775" y="28" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_ROLE_EMPLOYEE__ROLE</text>
-   <text x="775" y="36" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="846" y="38" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
-   <polyline fill="none" points="898,65 898,173" stroke="#800000" stroke-width="1"/>
-   <polygon fill="#800000" points="898,173 895,160 901,160" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
-   <text x="898" y="118" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_EMPLOYEE_EMPLOYEE__ROLE</text>
-   <text x="898" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
-   <text x="910" y="91" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
+   <polygon fill="#800000" points="675,28 688,25 688,31" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="775" y="27" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_ROLE_EMPLOYEE__ROLE</text>
+   <text x="775" y="35" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="847" y="37" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">1..*</text>
+   <polyline fill="none" points="897,65 897,173" stroke="#800000" stroke-width="1"/>
+   <polygon fill="#800000" points="897,173 894,160 900,160" stroke="#800000" stroke-width="1" stroke-linejoin="miter"/>
+   <text x="897" y="117" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FK_EMPLOYEE_EMPLOYEE__ROLE</text>
+   <text x="897" y="125" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Upd(C); Del(C);cpa</text>
+   <text x="909" y="90" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">0..*</text>
    <rect x="1283" y="607" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient1" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
@@ -137,54 +137,50 @@
    <rect x="737" y="735" fill="url(#Gradient2)" width="220" height="162" stroke="#808000" stroke-width="1"/>
    <text x="847" y="746" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Member</text>
    <line x1="737" x2="957" y1="752" y2="752" stroke="#808000" stroke-width="1"/>
-   <text x="742" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
-   <text x="742" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">first_name</text>
-   <text x="742" y="787" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">last_name</text>
-   <text x="742" y="800" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">phone_number</text>
-   <text x="742" y="813" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">email</text>
-   <text x="742" y="826" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">birthdate</text>
-   <text x="742" y="839" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_first_name</text>
-   <text x="742" y="852" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_last_name</text>
-   <text x="742" y="865" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_phone_number</text>
-   <text x="742" y="878" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_email</text>
-   <text x="742" y="891" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_birthdate</text>
-   <text x="870" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="870" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
-   <text x="870" y="787" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
-   <text x="870" y="800" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(10)</text>
-   <text x="870" y="813" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(255)</text>
-   <text x="870" y="826" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
-   <text x="870" y="839" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
-   <text x="870" y="852" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
-   <text x="870" y="865" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(10)</text>
-   <text x="870" y="878" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(255)</text>
-   <text x="870" y="891" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
-   <text x="936" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
-   <rect x="1203" y="791" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
+   <text x="741" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
+   <text x="741" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">first_name</text>
+   <text x="741" y="787" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">last_name</text>
+   <text x="741" y="800" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">phone_number</text>
+   <text x="741" y="813" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">email</text>
+   <text x="741" y="826" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">birthdate</text>
+   <text x="741" y="839" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_first_name</text>
+   <text x="741" y="852" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_last_name</text>
+   <text x="741" y="865" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_phone_number</text>
+   <text x="741" y="878" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_email</text>
+   <text x="741" y="891" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">guardian_birthdate</text>
+   <text x="869" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="869" y="774" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
+   <text x="869" y="787" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
+   <text x="869" y="800" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(10)</text>
+   <text x="869" y="813" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(255)</text>
+   <text x="869" y="826" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
+   <text x="869" y="839" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
+   <text x="869" y="852" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
+   <text x="869" y="865" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(10)</text>
+   <text x="869" y="878" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(255)</text>
+   <text x="869" y="891" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
+   <text x="935" y="761" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
+   <rect x="1223" y="804" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient3" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
          <stop offset="5%" stop-color="#ffffff"/>
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="1203" y="791" fill="url(#Gradient3)" width="210" height="97" stroke="#808000" stroke-width="1"/>
-   <text x="1308" y="802" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Subscription</text>
-   <line x1="1203" x2="1413" y1="808" y2="808" stroke="#808000" stroke-width="1"/>
-   <text x="1208" y="817" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
-   <text x="1208" y="830" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">type</text>
-   <text x="1208" y="843" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_date</text>
-   <text x="1208" y="856" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_date</text>
-   <text x="1208" y="869" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">subscription_status</text>
-   <text x="1208" y="882" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">paid_until</text>
-   <text x="1303" y="817" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="1303" y="830" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">varchar(50)</text>
-   <text x="1303" y="843" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">datetime</text>
-   <text x="1303" y="856" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
-   <text x="1303" y="869" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(15)</text>
-   <text x="1303" y="882" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
-   <text x="1363" y="817" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
-   <text x="1363" y="830" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
-   <text x="1363" y="843" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
+   <rect x="1223" y="804" fill="url(#Gradient3)" width="169" height="72" stroke="#808000" stroke-width="1"/>
+   <text x="1307" y="815" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Subscription</text>
+   <line x1="1223" x2="1392" y1="821" y2="821" stroke="#808000" stroke-width="1"/>
+   <text x="1228" y="830" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
+   <text x="1228" y="843" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">type</text>
+   <text x="1228" y="856" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_date</text>
+   <text x="1228" y="869" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_date</text>
+   <text x="1290" y="830" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="1290" y="843" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">varchar(50)</text>
+   <text x="1290" y="856" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">datetime</text>
+   <text x="1290" y="869" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
+   <text x="1350" y="830" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
+   <text x="1350" y="843" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
+   <text x="1350" y="856" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
    <rect x="266" y="509" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient4" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
@@ -195,17 +191,17 @@
    <rect x="266" y="509" fill="url(#Gradient4)" width="177" height="72" stroke="#808000" stroke-width="1"/>
    <text x="354" y="520" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Machine</text>
    <line x1="266" x2="443" y1="526" y2="526" stroke="#808000" stroke-width="1"/>
-   <text x="271" y="535" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">machine_id</text>
-   <text x="271" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">room_id</text>
-   <text x="271" y="561" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">type_name</text>
-   <text x="271" y="574" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">machine_status</text>
-   <text x="352" y="535" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="352" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">int</text>
-   <text x="352" y="561" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
-   <text x="352" y="574" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(15)</text>
-   <text x="412" y="535" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
-   <text x="412" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;fk2&gt;</text>
-   <text x="412" y="561" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;fk1&gt;</text>
+   <text x="270" y="535" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">machine_id</text>
+   <text x="270" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">room_id</text>
+   <text x="270" y="561" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">type_name</text>
+   <text x="270" y="574" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">machine_status</text>
+   <text x="351" y="535" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="351" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">int</text>
+   <text x="351" y="561" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
+   <text x="351" y="574" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(15)</text>
+   <text x="411" y="535" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
+   <text x="411" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;fk2&gt;</text>
+   <text x="411" y="561" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">&lt;fk1&gt;</text>
    <rect x="22" y="675" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient5" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
@@ -213,9 +209,9 @@
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="22" y="675" fill="url(#Gradient5)" width="152" height="53" stroke="#808000" stroke-width="1"/>
-   <text x="98" y="686" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MachineType</text>
-   <line x1="22" x2="174" y1="692" y2="692" stroke="#808000" stroke-width="1"/>
+   <rect x="22" y="675" fill="url(#Gradient5)" width="151" height="53" stroke="#808000" stroke-width="1"/>
+   <text x="97" y="686" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MachineType</text>
+   <line x1="22" x2="173" y1="692" y2="692" stroke="#808000" stroke-width="1"/>
    <text x="27" y="701" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">type_name</text>
    <text x="88" y="701" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">varchar(50)</text>
    <text x="148" y="701" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
@@ -226,30 +222,30 @@
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="323" y="714" fill="url(#Gradient6)" width="183" height="72" stroke="#808000" stroke-width="1"/>
+   <rect x="323" y="714" fill="url(#Gradient6)" width="182" height="72" stroke="#808000" stroke-width="1"/>
    <text x="414" y="725" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MachineReservation</text>
-   <line x1="323" x2="506" y1="731" y2="731" stroke="#808000" stroke-width="1"/>
-   <text x="328" y="740" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">machine_id</text>
-   <text x="328" y="753" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
-   <text x="328" y="766" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_timestamp</text>
-   <text x="328" y="779" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_timestamp</text>
-   <text x="410" y="740" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="410" y="753" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="410" y="766" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">datetime</text>
-   <text x="410" y="779" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
-   <text x="460" y="740" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
-   <text x="460" y="753" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
-   <text x="460" y="766" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
-   <rect x="1268" y="281" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
+   <line x1="323" x2="505" y1="731" y2="731" stroke="#808000" stroke-width="1"/>
+   <text x="327" y="740" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">machine_id</text>
+   <text x="327" y="753" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
+   <text x="327" y="766" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_timestamp</text>
+   <text x="327" y="779" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_timestamp</text>
+   <text x="409" y="740" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="409" y="753" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="409" y="766" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">datetime</text>
+   <text x="409" y="779" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
+   <text x="459" y="740" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
+   <text x="459" y="753" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
+   <text x="459" y="766" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
+   <rect x="1267" y="281" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient7" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
          <stop offset="5%" stop-color="#ffffff"/>
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="1268" y="281" fill="url(#Gradient7)" width="180" height="54" stroke="#808000" stroke-width="1"/>
-   <text x="1358" y="292" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GroupClassType</text>
-   <line x1="1268" x2="1448" y1="298" y2="298" stroke="#808000" stroke-width="1"/>
+   <rect x="1267" y="281" fill="url(#Gradient7)" width="181" height="54" stroke="#808000" stroke-width="1"/>
+   <text x="1357" y="292" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GroupClassType</text>
+   <line x1="1267" x2="1448" y1="298" y2="298" stroke="#808000" stroke-width="1"/>
    <text x="1272" y="307" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">class_name</text>
    <text x="1272" y="320" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">max_participants</text>
    <text x="1360" y="307" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">varchar(50)</text>
@@ -272,16 +268,16 @@
    <text x="909" y="212" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
    <text x="909" y="225" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(50)</text>
    <text x="969" y="199" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
-   <rect x="822" y="421" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
+   <rect x="821" y="421" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient9" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
          <stop offset="5%" stop-color="#ffffff"/>
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="822" y="421" fill="url(#Gradient9)" width="193" height="85" stroke="#808000" stroke-width="1"/>
+   <rect x="821" y="421" fill="url(#Gradient9)" width="194" height="85" stroke="#808000" stroke-width="1"/>
    <text x="918" y="432" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">GroupClass</text>
-   <line x1="822" x2="1015" y1="438" y2="438" stroke="#808000" stroke-width="1"/>
+   <line x1="821" x2="1015" y1="438" y2="438" stroke="#808000" stroke-width="1"/>
    <text x="826" y="447" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">class_name</text>
    <text x="826" y="460" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">room_id</text>
    <text x="826" y="473" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_timestamp</text>
@@ -303,9 +299,9 @@
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="467" y="358" fill="url(#Gradient10)" width="157" height="59" stroke="#808000" stroke-width="1"/>
+   <rect x="467" y="358" fill="url(#Gradient10)" width="156" height="59" stroke="#808000" stroke-width="1"/>
    <text x="545" y="369" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">Room</text>
-   <line x1="467" x2="624" y1="375" y2="375" stroke="#808000" stroke-width="1"/>
+   <line x1="467" x2="623" y1="375" y2="375" stroke="#808000" stroke-width="1"/>
    <text x="472" y="384" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">room_id</text>
    <text x="472" y="397" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">functionality</text>
    <text x="472" y="410" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">max_people</text>
@@ -313,16 +309,16 @@
    <text x="539" y="397" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">varchar(25)</text>
    <text x="539" y="410" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">int</text>
    <text x="599" y="384" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
-   <rect x="591" y="537" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
+   <rect x="590" y="537" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient11" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
          <stop offset="5%" stop-color="#ffffff"/>
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="591" y="537" fill="url(#Gradient11)" width="182" height="85" stroke="#808000" stroke-width="1"/>
-   <text x="682" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">RoomReservation</text>
-   <line x1="591" x2="773" y1="554" y2="554" stroke="#808000" stroke-width="1"/>
+   <rect x="590" y="537" fill="url(#Gradient11)" width="183" height="85" stroke="#808000" stroke-width="1"/>
+   <text x="681" y="548" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">RoomReservation</text>
+   <line x1="590" x2="773" y1="554" y2="554" stroke="#808000" stroke-width="1"/>
    <text x="595" y="563" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
    <text x="595" y="576" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">room_id</text>
    <text x="595" y="589" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_timestamp</text>
@@ -343,20 +339,20 @@
          <stop offset="95%" stop-color="#e9ca83"/>
       </linearGradient>
    </defs>
-   <rect x="506" y="100" fill="url(#Gradient12)" width="183" height="72" stroke="#808000" stroke-width="1"/>
+   <rect x="506" y="100" fill="url(#Gradient12)" width="182" height="72" stroke="#808000" stroke-width="1"/>
    <text x="597" y="111" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">FitnessRoomSchedule</text>
-   <line x1="506" x2="689" y1="117" y2="117" stroke="#808000" stroke-width="1"/>
-   <text x="511" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">employee_id</text>
-   <text x="511" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">room_id</text>
-   <text x="511" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_timestamp</text>
-   <text x="511" y="165" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_timestamp</text>
-   <text x="593" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="593" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="593" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">datetime</text>
-   <text x="593" y="165" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
-   <text x="643" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
-   <text x="643" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
-   <text x="643" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
+   <line x1="506" x2="688" y1="117" y2="117" stroke="#808000" stroke-width="1"/>
+   <text x="510" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">employee_id</text>
+   <text x="510" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">room_id</text>
+   <text x="510" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">start_timestamp</text>
+   <text x="510" y="165" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">end_timestamp</text>
+   <text x="592" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="592" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="592" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">datetime</text>
+   <text x="592" y="165" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'">datetime</text>
+   <text x="642" y="126" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
+   <text x="642" y="139" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
+   <text x="642" y="152" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk&gt;</text>
    <rect x="527" y="2" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient13" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
@@ -396,22 +392,22 @@
    <rect x="1215" y="60" fill="url(#Gradient15)" width="182" height="53" stroke="#800000" stroke-width="1"/>
    <text x="1306" y="71" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">EMPLOYEE_GROUP_CLASS_TYPE</text>
    <line x1="1215" x2="1397" y1="77" y2="77" stroke="#800000" stroke-width="1"/>
-   <text x="1220" y="86" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">employee_id</text>
-   <text x="1220" y="99" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">class_name</text>
-   <text x="1290" y="86" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
-   <text x="1290" y="99" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">varchar(50)</text>
-   <text x="1350" y="86" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
-   <text x="1350" y="99" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
-   <rect x="822" y="567" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
+   <text x="1219" y="86" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">employee_id</text>
+   <text x="1219" y="99" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">class_name</text>
+   <text x="1289" y="86" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">int</text>
+   <text x="1289" y="99" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">varchar(50)</text>
+   <text x="1349" y="86" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk1&gt;</text>
+   <text x="1349" y="99" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">&lt;pk,fk2&gt;</text>
+   <rect x="821" y="567" fill="#ffffff" width="0" height="0" stroke="none" stroke-width="0"/>
    <defs>
       <linearGradient id="Gradient16" x1="0%" x2="100%" y1="0%" y2="100%" gradientUnits="objectBoundingBox">
          <stop offset="5%" stop-color="#ffffff"/>
          <stop offset="95%" stop-color="#d28902"/>
       </linearGradient>
    </defs>
-   <rect x="822" y="567" fill="url(#Gradient16)" width="193" height="72" stroke="#800000" stroke-width="1"/>
+   <rect x="821" y="567" fill="url(#Gradient16)" width="194" height="72" stroke="#800000" stroke-width="1"/>
    <text x="918" y="578" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-anchor="middle">MEMBER_GROUP_CLASS</text>
-   <line x1="822" x2="1015" y1="584" y2="584" stroke="#800000" stroke-width="1"/>
+   <line x1="821" x2="1015" y1="584" y2="584" stroke="#800000" stroke-width="1"/>
    <text x="826" y="593" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">member_id</text>
    <text x="826" y="606" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">class_name</text>
    <text x="826" y="619" fill="#000000" font-size="8" font-family="'Arial Unicode MS','Arial'" text-decoration="underline">room_id</text>

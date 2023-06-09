@@ -11,8 +11,8 @@ RUN apt-get update && \
 
 WORKDIR /usr/src/app
 
-COPY ./entrypoint.sh ./entrypoint.sh
-COPY ./run-init.sh ./run-init.sh
+COPY entrypoint.sh ./entrypoint.sh
+COPY run-init.sh ./run-init.sh
 
 RUN dos2unix ./entrypoint.sh
 RUN dos2unix ./run-init.sh

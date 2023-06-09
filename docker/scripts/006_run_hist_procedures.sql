@@ -1,0 +1,1 @@
+EXEC sproc_generateHistoryTables;

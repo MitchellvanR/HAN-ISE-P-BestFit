@@ -1,0 +1,65 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.3, pytest-7.3.1, pluggy-1.0.0 -- C:\Users\lucas\AppData\Local\pypoetry\Cache\virtualenvs\bestfit-g-H0cLD0-py3.11\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\lucas\IdeaProjects\best-fit-gym\staging_area\bestfit
+plugins: Faker-18.10.1, cov-4.1.0
+collecting ... collected 27 items
+
+tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation PASSED  [  3%]
+tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation_pd_exception PASSED [  7%]
+tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation_pyodbc_exception PASSED [ 11%]
+tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation_value_error_exception PASSED [ 14%]
+tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule PASSED     [ 18%]
+tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule_pd_exception PASSED [ 22%]
+tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule_pyodbc_exception PASSED [ 25%]
+tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule_value_error_exception PASSED [ 29%]
+tests/test_bestfit.py::TestBestFitCacher::test_get_from_db PASSED        [ 33%]
+tests/test_bestfit.py::TestBestFitCacher::test_get_from_db_pd_exception PASSED [ 37%]
+tests/test_bestfit.py::TestBestFitCacher::test_get_from_db_pyodbc_exception PASSED [ 40%]
+tests/test_bestfit.py::TestBestFitCacher::test_get_from_db_resources_closed_error_exception PASSED [ 44%]
+tests/test_bestfit.py::TestBestFitCacher::test_put_in_cache PASSED       [ 48%]
+tests/test_bestfit.py::TestBestFitCacher::test_put_in_cache_exception PASSED [ 51%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule PASSED [ 55%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule_connection_error PASSED [ 59%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule_type_error PASSED [ 62%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule_value_error PASSED [ 66%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_from_cache PASSED     [ 70%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_from_cache_connection_error PASSED [ 74%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_from_cache_key_none PASSED [ 77%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations PASSED [ 81%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations_connection_error PASSED [ 85%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations_type_error PASSED [ 88%]
+tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations_value_error PASSED [ 92%]
+tests/test_bestfit.py::BestFitGeneratorTestCase::test_generate_random_timestamps PASSED [ 96%]
+tests/test_bestfit.py::BestFitGeneratorTestCase::test_generate_random_timestamps_no_occupied_timestamps PASSED [100%]
+
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation_pd_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation_pyodbc_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_reservation_value_error_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule_pd_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule_pyodbc_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_cache_schedule_value_error_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_get_from_db
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_get_from_db_pd_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_get_from_db_pyodbc_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_get_from_db_resources_closed_error_exception
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_put_in_cache
+PASSED tests/test_bestfit.py::TestBestFitCacher::test_put_in_cache_exception
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule_connection_error
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule_type_error
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_employee_schedule_value_error
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_from_cache
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_from_cache_connection_error
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_from_cache_key_none
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations_connection_error
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations_type_error
+PASSED tests/test_bestfit.py::TestBestFitRoster::test_get_member_reservations_value_error
+PASSED tests/test_bestfit.py::BestFitGeneratorTestCase::test_generate_random_timestamps
+PASSED tests/test_bestfit.py::BestFitGeneratorTestCase::test_generate_random_timestamps_no_occupied_timestamps
+============================= 27 passed in 0.77s ==============================

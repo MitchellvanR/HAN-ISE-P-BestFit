@@ -640,17 +640,6 @@ IF EXISTS(SELECT 1
     DROP TYPE ROOM_ID
 GO
 
-IF EXISTS(SELECT 1
-          FROM systypes
-          WHERE name = 'subscription_status')
-    EXECUTE sp_unbindrule SUBSCRIPTION_STATUS
-GO
-
-IF EXISTS(SELECT 1
-          FROM systypes
-          WHERE name = 'subscription_status')
-    DROP TYPE SUBSCRIPTION_STATUS
-GO
 
 IF EXISTS(SELECT 1
           FROM systypes
@@ -685,28 +674,18 @@ IF EXISTS (SELECT 1
     DROP RULE r_room_functionality
 GO
 
-IF EXISTS (SELECT 1
-           FROM sysobjects
-           WHERE id = OBJECT_ID('r_subscription_status')
-             AND type = 'R')
-    DROP RULE r_subscription_status
-GO
-
 CREATE RULE r_email AS
     @column >= '0'
 GO
 
 CREATE RULE r_machine_status AS
-    @column IN ('Actief', 'Buiten gebruik')
+    @column IN ('Active', 'Out of order')
 GO
 
 CREATE RULE r_room_functionality AS
     @column IN ('Fitness', 'GroupClass', 'Squash')
 GO
 
-CREATE RULE r_subscription_status AS
-    @column IN ('Actief', 'Inactief')
-GO
 
 /*==============================================================*/
 /* Domain: age                                                  */
@@ -764,7 +743,7 @@ GO
 /* Domain: employee_id                                          */
 /*==============================================================*/
 CREATE TYPE EMPLOYEE_ID
-    FROM INT
+    FROM VARCHAR(36)
 GO
 
 /*==============================================================*/
@@ -809,7 +788,7 @@ GO
 /* Domain: member_id                                            */
 /*==============================================================*/
 CREATE TYPE MEMBER_ID
-    FROM INT
+    FROM VARCHAR(36)
 GO
 
 /*==============================================================*/
@@ -850,15 +829,6 @@ CREATE TYPE ROOM_ID
     FROM INT
 GO
 
-/*==============================================================*/
-/* Domain: subscription_status                                  */
-/*==============================================================*/
-CREATE TYPE SUBSCRIPTION_STATUS
-    FROM VARCHAR(15)
-GO
-
-EXECUTE sp_bindrule r_subscription_status, SUBSCRIPTION_STATUS
-GO
 
 /*==============================================================*/
 /* Domain: subscription_type                                    */
@@ -953,7 +923,8 @@ CREATE TABLE FitnessRoomSchedule
     room_id         ROOM_ID     NOT NULL,
     start_timestamp [DATETIME]  NOT NULL,
     end_timestamp   [DATETIME]  NOT NULL,
-    CONSTRAINT pk_fitnessroomschedule PRIMARY KEY (employee_id, room_id, start_timestamp)
+    CONSTRAINT pk_fitnessroomschedule PRIMARY KEY (employee_id, room_id, start_timestamp),
+    CONSTRAINT ck_fitnessroomschedule_start_end CHECK (start_timestamp < end_timestamp),
 )
 GO
 
@@ -985,7 +956,8 @@ CREATE TABLE GroupClass
     start_timestamp [DATETIME]  NOT NULL,
     employee_id     EMPLOYEE_ID NOT NULL,
     end_timestamp   [DATETIME]  NOT NULL,
-    CONSTRAINT pk_groupclass PRIMARY KEY (class_name, room_id, start_timestamp)
+    CONSTRAINT pk_groupclass PRIMARY KEY (class_name, room_id, start_timestamp),
+    CONSTRAINT ck_groupclass_start_end CHECK (start_timestamp < end_timestamp),
 )
 GO
 
@@ -1023,7 +995,8 @@ CREATE TABLE GroupClassType
 (
     class_name       CLASS_NAME NOT NULL,
     max_participants QUANTITY   NOT NULL,
-    CONSTRAINT pk_groupclasstype PRIMARY KEY (class_name)
+    CONSTRAINT pk_groupclasstype PRIMARY KEY (class_name),
+    CONSTRAINT ck_groupclasstype_max_participants CHECK (max_participants > 0),
 )
 GO
 
@@ -1096,7 +1069,8 @@ CREATE TABLE MachineReservation
     member_id       MEMBER_ID  NOT NULL,
     start_timestamp [DATETIME] NOT NULL,
     end_timestamp   [DATETIME] NOT NULL,
-    CONSTRAINT pk_machinereservation PRIMARY KEY (machine_id, member_id, start_timestamp)
+    CONSTRAINT pk_machinereservation PRIMARY KEY (machine_id, member_id, start_timestamp),
+    CONSTRAINT ck_machinereservation_start_end CHECK (start_timestamp < end_timestamp),
 )
 GO
 
@@ -1137,14 +1111,28 @@ CREATE TABLE Member
     first_name            FIRST_NAME   NOT NULL,
     last_name             LAST_NAME    NOT NULL,
     phone_number          PHONE_NUMBER NULL,
-    email                 EMAIL        NOT NULL,
+    email                 EMAIL        NOT NULL UNIQUE,
     birthdate             [DATE]       NOT NULL,
     guardian_first_name   FIRST_NAME   NULL,
     guardian_last_name    LAST_NAME    NULL,
     guardian_phone_number PHONE_NUMBER NULL,
     guardian_email        EMAIL        NULL,
     guardian_birthdate    [DATE]       NULL,
-    CONSTRAINT pk_member PRIMARY KEY (member_id)
+    CONSTRAINT pk_member PRIMARY KEY (member_id),
+    CONSTRAINT uq_member_email UNIQUE (email),
+    CONSTRAINT ck_member_birthdate CHECK (birthdate < GETDATE()),
+    CONSTRAINT ck_member_guardian_birthdate CHECK (
+            (guardian_birthdate < GETDATE()
+                AND guardian_birthdate < birthdate
+                AND guardian_birthdate <= DATEADD(year, -18, GETDATE()))
+            OR guardian_birthdate IS NULL),
+    CONSTRAINT ck_member_minor_guardian_filled CHECK (
+            (DATEDIFF(YEAR, birthdate, GETDATE()) < 18
+                AND (guardian_first_name IS NOT NULL
+                    OR guardian_last_name IS NOT NULL
+                    OR guardian_email IS NOT NULL
+                    OR guardian_birthdate IS NOT NULL))
+            OR DATEDIFF(YEAR, birthdate, GETDATE()) >= 18)
 )
 GO
 
@@ -1199,7 +1187,8 @@ CREATE TABLE Room
     room_id       ROOM_ID            NOT NULL,
     functionality ROOM_FUNCTIONALITY NOT NULL,
     max_people    QUANTITY           NOT NULL,
-    CONSTRAINT pk_room PRIMARY KEY (room_id)
+    CONSTRAINT pk_room PRIMARY KEY (room_id),
+    CONSTRAINT ck_room_max_people CHECK (max_people > 0),
 )
 GO
 
@@ -1213,8 +1202,9 @@ CREATE TABLE RoomReservation
     start_timestamp [DATETIME] NOT NULL,
     end_timestamp   [DATETIME] NOT NULL,
     quantity        QUANTITY   NOT NULL
-        CONSTRAINT ckc_quantity_roomrese CHECK (quantity >= 0),
-    CONSTRAINT pk_roomreservation PRIMARY KEY (member_id, room_id, start_timestamp)
+        CONSTRAINT ckc_quantity_roomrese CHECK (quantity > 0),
+    CONSTRAINT pk_roomreservation PRIMARY KEY (member_id, room_id, start_timestamp),
+    CONSTRAINT ck_roomreservation_start_end CHECK (start_timestamp < end_timestamp),
 )
 GO
 
@@ -1245,9 +1235,8 @@ CREATE TABLE Subscription
     type                SUBSCRIPTION_TYPE   NOT NULL,
     start_date          [DATE]              NOT NULL,
     end_date            [DATE]              NOT NULL,
-    subscription_status SUBSCRIPTION_STATUS NOT NULL,
-    paid_until          [DATE]              NOT NULL,
-    CONSTRAINT pk_subscription PRIMARY KEY (member_id, type, start_date)
+    CONSTRAINT pk_subscription PRIMARY KEY (member_id, type, start_date),
+    CONSTRAINT ck_subscription_start_date_end_date CHECK (start_date < end_date),
 )
 GO
 
@@ -1279,7 +1268,12 @@ CREATE TABLE SubscriptionType
     min_length    AMOUNT_OF_MONTHS  NOT NULL,
     min_age       AGE               NULL,
     max_age       AGE               NULL,
-    CONSTRAINT pk_subscriptiontype PRIMARY KEY (type)
+    CONSTRAINT pk_subscriptiontype PRIMARY KEY (type),
+    CONSTRAINT ck_subscriptiontype_min_age CHECK (min_age >= 0),
+    CONSTRAINT ck_subscriptiontype_max_age CHECK (max_age >= 0),
+    CONSTRAINT ck_subscriptiontype_min_age_max_age CHECK (min_age < max_age),
+    CONSTRAINT ck_subscriptiontype_min_length CHECK (min_length > 0),
+    CONSTRAINT ck_subscriptiontype_notice_period CHECK (notice_period > 0),
 )
 GO
 
